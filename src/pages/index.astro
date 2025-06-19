@@ -370,37 +370,39 @@ import '../styles/resume.css';
 		</main>
 
 		<script>
-			const themeBtn = document.getElementById('theme-btn');
-			const body = document.body;
+			(function() {
+				const themeBtn = document.getElementById('theme-btn');
+				const body = document.body;
 
-			if (!themeBtn) {
-				console.error('Theme button not found');
-				return;
-			}
+				if (!themeBtn) {
+					console.error('Theme button not found');
+					return;
+				}
 
-			// ローカルストレージからテーマを読み込み
-			const savedTheme = localStorage.getItem('theme');
-			if (savedTheme) {
-				body.setAttribute('data-theme', savedTheme);
-				themeBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
-			}
+				// ローカルストレージからテーマを読み込み
+				const savedTheme = localStorage.getItem('theme');
+				if (savedTheme) {
+					body.setAttribute('data-theme', savedTheme);
+					themeBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+				}
 
-			// システムの設定を確認
-			if (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-				body.setAttribute('data-theme', 'dark');
-				themeBtn.textContent = '☀️';
-			}
+				// システムの設定を確認
+				if (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					body.setAttribute('data-theme', 'dark');
+					themeBtn.textContent = '☀️';
+				}
 
-			themeBtn.addEventListener('click', () => {
-				const currentTheme = body.getAttribute('data-theme');
-				const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-				
-				body.setAttribute('data-theme', newTheme);
-				themeBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-				
-				// ローカルストレージに保存
-				localStorage.setItem('theme', newTheme);
-			});
+				themeBtn.addEventListener('click', () => {
+					const currentTheme = body.getAttribute('data-theme');
+					const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+					
+					body.setAttribute('data-theme', newTheme);
+					themeBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+					
+					// ローカルストレージに保存
+					localStorage.setItem('theme', newTheme);
+				});
+			})();
 		</script>
 	</body>
 </html>
