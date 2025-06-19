@@ -1,5 +1,7 @@
 # Curriculum-Vitae
 
+https://kiakiraki.github.io/curriculum-vitae/
+
 ## 🛠️ 技術スタック
 
 - **フレームワーク**: [Astro](https://astro.build/)
