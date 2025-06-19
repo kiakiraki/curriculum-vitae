@@ -373,6 +373,11 @@ import '../styles/resume.css';
 			const themeBtn = document.getElementById('theme-btn');
 			const body = document.body;
 
+			if (!themeBtn) {
+				console.error('Theme button not found');
+				return;
+			}
+
 			// ローカルストレージからテーマを読み込み
 			const savedTheme = localStorage.getItem('theme');
 			if (savedTheme) {
