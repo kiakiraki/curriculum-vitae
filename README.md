@@ -1,47 +1,106 @@
-# Astro Starter Kit: Minimal
+# Curriculum-Vitae
 
-```sh
-npm create astro@latest -- --template minimal
+## 🛠️ 技術スタック
+
+- **フレームワーク**: [Astro](https://astro.build/)
+- **スタイリング**: CSS Variables + レスポンシブデザイン
+- **フォント**: Google Fonts (Noto Sans JP)
+- **ホスティング**: GitHub Pages
+- **CI/CD**: GitHub Actions
+
+## 📦 インストール
+
+```bash
+# 依存関係のインストール
+npm install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## 🏃‍♂️ 開発
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+```bash
+# 開発サーバーの起動
+npm run dev
+```
 
-## 🚀 Project Structure
+開発サーバーが起動後、[http://localhost:4321/curriculum-vitae](http://localhost:4321/curriculum-vitae) にアクセスしてください。
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🏗️ ビルド
 
-```text
-/
+```bash
+# 本番用ビルド
+npm run build
+
+# ビルド結果のプレビュー
+npm run preview
+```
+
+## 🚀 デプロイ
+
+### GitHub Pages
+
+1. GitHubリポジトリの設定で「Pages」セクションに移動
+2. Source を「GitHub Actions」に設定
+3. `main` または `master` ブランチにpushすると自動でデプロイされます
+
+### 手動デプロイ
+
+```bash
+# ビルド後、distディレクトリの内容を任意のWebサーバーにアップロード
+npm run build
+```
+
+## 📁 プロジェクト構成
+
+```
+cv-website/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml          # GitHub Actions設定
 ├── public/
+│   └── favicon.svg             # ファビコン
 ├── src/
 │   └── pages/
-│       └── index.astro
-└── package.json
+│       └── index.astro         # メインページ
+├── astro.config.mjs            # Astro設定ファイル
+├── package.json
+└── README.md
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🎨 カスタマイズ
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### テーマカラーの変更
 
-Any static assets, like images, can be placed in the `public/` directory.
+`src/pages/index.astro` 内のCSS変数を編集してください：
 
-## 🧞 Commands
+```css
+:root {
+  --accent-color: #0066cc;        /* アクセントカラー */
+  --bg-color: #ffffff;            /* 背景色 */
+  --text-color: #1a1a1a;          /* テキスト色 */
+}
+```
 
-All commands are run from the root of the project, from a terminal:
+### 内容の更新
 
-| Command                   | Action                                           |
+職務経歴書の内容を更新する場合は、`src/pages/index.astro` ファイルのHTML部分を編集してください。
+
+## 🧞 コマンド
+
+プロジェクトのルートディレクトリで以下のコマンドを実行してください：
+
+| コマンド                   | 動作                                           |
 | :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `npm install`             | 依存関係をインストール                            |
+| `npm run dev`             | 開発サーバーを起動 (`localhost:4321`)              |
+| `npm run build`           | 本番用サイトを `./dist/` にビルド                  |
+| `npm run preview`         | ビルド結果をローカルでプレビュー                     |
 
-## 👀 Want to learn more?
+## 📧 連絡先
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **GitHub**: [kiakiraki](https://github.com/kiakiraki)
+- **Twitter**: [@__kiakiraki__](https://twitter.com/__kiakiraki__)
+- **LinkedIn**: [Akira TSURUDA](https://www.linkedin.com/in/akira-tsuruda-aa1316156/)
+
+---
+
+Built with ❤️ using [Astro](https://astro.build/)
