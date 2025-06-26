@@ -1,10 +1,10 @@
 # Curriculum-Vitae
 
-https://kiakiraki.github.io/curriculum-vitae/
+https://curriculum_vitae.kiakiraki.dev/
 
 ## 概要
 
-これは、職務経歴書を静的Webページとして構成し、GitHub Pagesでホスティングするためのプロジェクトです。Astroフレームワークを使用し、高速な表示とシンプルな開発体験を目指しています。
+これは、職務経歴書を静的Webページとして構成し、GitHub Pagesでホスティングし、カスタムドメインで公開するためのプロジェクトです。Astroフレームワークを使用し、高速な表示とシンプルな開発体験を目指しています。
 
 ## 🛠️ 技術スタック
 
