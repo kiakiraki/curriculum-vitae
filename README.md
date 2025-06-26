@@ -84,8 +84,7 @@ cv-website/
 ## 📧 連絡先
 
 - **GitHub**: [kiakiraki](https://github.com/kiakiraki)
-- **Twitter**: [@**kiakiraki**](https://twitter.com/__kiakiraki__)
-- **LinkedIn**: [Akira TSURUDA](https://www.linkedin.com/in/akira-tsuruda-aa1316156/)
+- **Twitter**: [@**__kiakiraki__**](https://twitter.com/__kiakiraki__)
 
 ---
 
