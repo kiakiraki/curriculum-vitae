@@ -27,3 +27,6 @@ jobs:
 
       - name: Check format
         run: npx prettier --check .
+
+      - name: Lint code
+        run: npm run lint
