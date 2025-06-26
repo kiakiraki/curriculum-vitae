@@ -81,11 +81,6 @@ cv-website/
 }
 ```
 
-## 📧 連絡先
-
-- **GitHub**: [kiakiraki](https://github.com/kiakiraki)
-- **Twitter**: [@**__kiakiraki__**](https://twitter.com/__kiakiraki__)
-
 ---
 
 Built with ❤️ using [Astro](https://astro.build/)
