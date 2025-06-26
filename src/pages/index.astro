@@ -1,428 +1,629 @@
 ---
-import '../styles/resume.css';
+import '../styles/resume.css'
 ---
 
 <html lang="ja">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>鶴田 洸 - 職務経歴書</title>
-		<meta name="description" content="鶴田洸の職務経歴書 - 機械学習エンジニア/バックエンドエンジニア">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-	</head>
-	<body>
-		<div class="theme-toggle">
-			<button id="theme-btn" aria-label="Toggle dark mode">🌙</button>
-		</div>
-		
-		<main class="container">
-			<header class="header">
-				<h1>Curriculum-Vitae</h1>
-				<p class="update-date">2025/06現在</p>
-			</header>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>鶴田 洸 - 職務経歴書</title>
+    <meta
+      name="description"
+      content="鶴田洸の職務経歴書 - 機械学習エンジニア/バックエンドエンジニア"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="theme-toggle">
+      <button id="theme-btn" aria-label="Toggle dark mode">🌙</button>
+    </div>
 
-			<section class="basic-info">
-				<h2>基本情報</h2>
-				<div class="info-grid">
-					<div class="info-item">
-						<strong>氏名</strong>
-						<span>鶴田 洸 (Akira TSURUDA)</span>
-					</div>
-					<div class="info-item">
-						<strong>LAPRAS</strong>
-						<a href="https://lapras.com/public/I8IXHAC" target="_blank">lapras.com/public/I8IXHAC</a>
-					</div>
-					<div class="info-item">
-						<strong>Findy</strong>
-						<a href="https://findy-code.io/share_profiles/tp8hu8kHODzvM" target="_blank">findy-code.io/share_profiles/tp8hu8kHODzvM</a>
-					</div>
-					<div class="info-item">
-						<strong>GitHub</strong>
-						<a href="https://github.com/kiakiraki" target="_blank">kiakiraki</a>
-					</div>
-					<div class="info-item">
-						<strong>Twitter</strong>
-						<a href="https://twitter.com/__kiakiraki__" target="_blank">@__kiakiraki__</a>
-					</div>
-					<div class="info-item">
-						<strong>mixi2</strong>
-						<a href="https://mixi.social/@kiakiraki" target="_blank">@kiakiraki</a>
-					</div>
-					<div class="info-item">
-						<strong>Qiita</strong>
-						<a href="https://qiita.com/kiakiraki" target="_blank">kiakiraki</a>
-					</div>
-					<div class="info-item">
-						<strong>Zenn</strong>
-						<a href="https://zenn.dev/kiakiraki" target="_blank">kiakiraki</a>
-					</div>
-					<div class="info-item">
-						<strong>LinkedIn</strong>
-						<a href="https://www.linkedin.com/in/akira-tsuruda-aa1316156/" target="_blank">Akira TSURUDA</a>
-					</div>
-					<div class="info-item">
-						<strong>Connpass</strong>
-						<a href="https://connpass.com/user/kiakiraki/" target="_blank">あきらき</a>
-					</div>
-				</div>
-			</section>
+    <main class="container">
+      <header class="header">
+        <h1>Curriculum-Vitae</h1>
+        <p class="update-date">2025/06現在</p>
+      </header>
 
-			<section class="career">
-				<h2>職歴</h2>
-				<div class="career-list">
-					<div class="career-item">
-						<div class="period">2021/03〜</div>
-						<div class="company">株式会社MIXI</div>
-						<ul class="career-details">
-							<li>みてね事業部 機械学習エンジニア / バックエンドエンジニア</li>
-						</ul>
-					</div>
-					<div class="career-item">
-						<div class="period">2020/03〜2021/02</div>
-						<div class="company">株式会社AIメディカルサービス</div>
-						<ul class="career-details">
-							<li>研究開発部門 AIモデルチーム AIエンジニア (兼 インフラ/バックエンド)</li>
-						</ul>
-					</div>
-					<div class="career-item">
-						<div class="period">2018/08～2020/02</div>
-						<div class="company">株式会社スカイディスク</div>
-						<ul class="career-details">
-							<li>AIエンジニアリング本部 シニアAIエンジニア</li>
-							<li>2019/10～ 事業推進本部 AIエンジニアリング部 兼 クラウドシステム部 シニアAIエンジニア</li>
-						</ul>
-					</div>
-					<div class="career-item">
-						<div class="period">2014/04～2018/08</div>
-						<div class="company">富士通株式会社</div>
-						<ul class="career-details">
-							<li>～2016/07 仮想化ソフトウェア技術統括部</li>
-							<li>2016/07～2018/08 AIプラットフォーム事業部</li>
-						</ul>
-					</div>
-				</div>
-			</section>
+      <section class="basic-info">
+        <h2>基本情報</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <strong>氏名</strong>
+            <span>鶴田 洸 (Akira TSURUDA)</span>
+          </div>
+          <div class="info-item">
+            <strong>LAPRAS</strong>
+            <a href="https://lapras.com/public/I8IXHAC" target="_blank"
+              >lapras.com/public/I8IXHAC</a
+            >
+          </div>
+          <div class="info-item">
+            <strong>Findy</strong>
+            <a
+              href="https://findy-code.io/share_profiles/tp8hu8kHODzvM"
+              target="_blank">findy-code.io/share_profiles/tp8hu8kHODzvM</a
+            >
+          </div>
+          <div class="info-item">
+            <strong>GitHub</strong>
+            <a href="https://github.com/kiakiraki" target="_blank">kiakiraki</a>
+          </div>
+          <div class="info-item">
+            <strong>Twitter</strong>
+            <a href="https://twitter.com/__kiakiraki__" target="_blank"
+              >@__kiakiraki__</a
+            >
+          </div>
+          <div class="info-item">
+            <strong>mixi2</strong>
+            <a href="https://mixi.social/@kiakiraki" target="_blank"
+              >@kiakiraki</a
+            >
+          </div>
+          <div class="info-item">
+            <strong>Qiita</strong>
+            <a href="https://qiita.com/kiakiraki" target="_blank">kiakiraki</a>
+          </div>
+          <div class="info-item">
+            <strong>Zenn</strong>
+            <a href="https://zenn.dev/kiakiraki" target="_blank">kiakiraki</a>
+          </div>
+          <div class="info-item">
+            <strong>LinkedIn</strong>
+            <a
+              href="https://www.linkedin.com/in/akira-tsuruda-aa1316156/"
+              target="_blank">Akira TSURUDA</a
+            >
+          </div>
+          <div class="info-item">
+            <strong>Connpass</strong>
+            <a href="https://connpass.com/user/kiakiraki/" target="_blank"
+              >あきらき</a
+            >
+          </div>
+        </div>
+      </section>
 
-			<section class="skills">
-				<h2>スキル</h2>
-				
-				<div class="skill-category">
-					<h3>Machine Learning / Deep Learning</h3>
-					<p>業務で約7年、顧客データを用いた PoC やシステム開発を実施。AIメディカルサービスでは、医療系の画像データ (内視鏡画像) を用いた画像認識モデルの研究開発、及び医療機関との共同研究を実施。</p>
-					<p>主な対象は、画像データ、センサデータ(数値/時系列データ)など。顧客対応 (業務課題のヒアリング等) からモデルの作成、顧客システム開発までを含む、幅広い範囲を担当。</p>
-					<p>最近はMLOps基盤の整備に興味があり、MLFlowを用いた開発環境・実験管理基盤の構築、Kubeflowを用いた基盤の利用経験あり。</p>
-					<div class="tech-list">
-						<span class="tech-tag">Python</span>
-						<span class="tech-tag">Flask</span>
-						<span class="tech-tag">Keras</span>
-						<span class="tech-tag">TensorFlow</span>
-						<span class="tech-tag">PyTorch</span>
-						<span class="tech-tag">BVLC Caffe</span>
-						<span class="tech-tag">scikit-learn</span>
-						<span class="tech-tag">Pandas</span>
-						<span class="tech-tag">OpenCV</span>
-						<span class="tech-tag">Pillow</span>
-						<span class="tech-tag">MLFlow</span>
-						<span class="tech-tag">Kubeflow</span>
-						<span class="tech-tag">BigQuery</span>
-					</div>
-				</div>
+      <section class="career">
+        <h2>職歴</h2>
+        <div class="career-list">
+          <div class="career-item">
+            <div class="period">2021/03〜</div>
+            <div class="company">株式会社MIXI</div>
+            <ul class="career-details">
+              <li>みてね事業部 機械学習エンジニア / バックエンドエンジニア</li>
+            </ul>
+          </div>
+          <div class="career-item">
+            <div class="period">2020/03〜2021/02</div>
+            <div class="company">株式会社AIメディカルサービス</div>
+            <ul class="career-details">
+              <li>
+                研究開発部門 AIモデルチーム AIエンジニア (兼
+                インフラ/バックエンド)
+              </li>
+            </ul>
+          </div>
+          <div class="career-item">
+            <div class="period">2018/08～2020/02</div>
+            <div class="company">株式会社スカイディスク</div>
+            <ul class="career-details">
+              <li>AIエンジニアリング本部 シニアAIエンジニア</li>
+              <li>
+                2019/10～ 事業推進本部 AIエンジニアリング部 兼
+                クラウドシステム部 シニアAIエンジニア
+              </li>
+            </ul>
+          </div>
+          <div class="career-item">
+            <div class="period">2014/04～2018/08</div>
+            <div class="company">富士通株式会社</div>
+            <ul class="career-details">
+              <li>～2016/07 仮想化ソフトウェア技術統括部</li>
+              <li>2016/07～2018/08 AIプラットフォーム事業部</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-				<div class="skill-category">
-					<h3>Backend</h3>
-					<p>業務で約3年、Ruby on Railsを用いたWebサービス開発を実施。MIXIでは、最大2000万ユーザ規模のWebサービスの開発・運用を実施した。</p>
-					<p>その他、Python / Flaskを用いた開発経験などもあり。</p>
-					<div class="tech-list">
-						<span class="tech-tag">Ruby</span>
-						<span class="tech-tag">Ruby on Rails</span>
-						<span class="tech-tag">Sidekiq</span>
-						<span class="tech-tag">Python</span>
-						<span class="tech-tag">Flask</span>
-					</div>
-				</div>
+      <section class="skills">
+        <h2>スキル</h2>
 
-				<div class="skill-category">
-					<h3>Windows Application</h3>
-					<p>業務で約2年間、ミドルウェア製品 (システムバックアップソフトウェア) の開発を実施</p>
-					<div class="tech-list">
-						<span class="tech-tag">C#</span>
-						<span class="tech-tag">.NET Framework</span>
-						<span class="tech-tag">Windows ADK</span>
-					</div>
-				</div>
+        <div class="skill-category">
+          <h3>Machine Learning / Deep Learning</h3>
+          <p>
+            業務で約7年、顧客データを用いた PoC
+            やシステム開発を実施。AIメディカルサービスでは、医療系の画像データ
+            (内視鏡画像)
+            を用いた画像認識モデルの研究開発、及び医療機関との共同研究を実施。
+          </p>
+          <p>
+            主な対象は、画像データ、センサデータ(数値/時系列データ)など。顧客対応
+            (業務課題のヒアリング等)
+            からモデルの作成、顧客システム開発までを含む、幅広い範囲を担当。
+          </p>
+          <p>
+            最近はMLOps基盤の整備に興味があり、MLFlowを用いた開発環境・実験管理基盤の構築、Kubeflowを用いた基盤の利用経験あり。
+          </p>
+          <div class="tech-list">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">Keras</span>
+            <span class="tech-tag">TensorFlow</span>
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">BVLC Caffe</span>
+            <span class="tech-tag">scikit-learn</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">OpenCV</span>
+            <span class="tech-tag">Pillow</span>
+            <span class="tech-tag">MLFlow</span>
+            <span class="tech-tag">Kubeflow</span>
+            <span class="tech-tag">BigQuery</span>
+          </div>
+        </div>
 
-				<div class="skill-category">
-					<h3>仮想化基盤/ハイパーバイザ</h3>
-					<p>製品開発の中で、VMware vShpere 等の仮想化基盤を用いた環境構築/API による制御を実施</p>
-					<div class="tech-list">
-						<span class="tech-tag">VMware vSphere/ESXi</span>
-						<span class="tech-tag">vCenter</span>
-						<span class="tech-tag">VMware vSphere Web Services SDK</span>
-						<span class="tech-tag">Virtual Disk Development Kit (VDDK)</span>
-					</div>
-				</div>
+        <div class="skill-category">
+          <h3>Backend</h3>
+          <p>
+            業務で約3年、Ruby on
+            Railsを用いたWebサービス開発を実施。MIXIでは、最大2000万ユーザ規模のWebサービスの開発・運用を実施した。
+          </p>
+          <p>その他、Python / Flaskを用いた開発経験などもあり。</p>
+          <div class="tech-list">
+            <span class="tech-tag">Ruby</span>
+            <span class="tech-tag">Ruby on Rails</span>
+            <span class="tech-tag">Sidekiq</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+          </div>
+        </div>
 
-				<div class="skill-category">
-					<h3>Network</h3>
-					<p>学生時代、ネットワークプロトコル (特に無線LAN、Ethernet) 関連の研究を実施</p>
-					<div class="tech-list">
-						<span class="tech-tag">WireShark</span>
-						<span class="tech-tag">QualNet</span>
-					</div>
-				</div>
+        <div class="skill-category">
+          <h3>Windows Application</h3>
+          <p>
+            業務で約2年間、ミドルウェア製品 (システムバックアップソフトウェア)
+            の開発を実施
+          </p>
+          <div class="tech-list">
+            <span class="tech-tag">C#</span>
+            <span class="tech-tag">.NET Framework</span>
+            <span class="tech-tag">Windows ADK</span>
+          </div>
+        </div>
 
-				<div class="skill-category">
-					<h3>その他</h3>
-					<div class="tech-list">
-						<span class="tech-tag">Docker</span>
-						<span class="tech-tag">nvidia-docker</span>
-						<span class="tech-tag">docker-compose</span>
-						<span class="tech-tag">Kubernetes</span>
-						<span class="tech-tag">Arduino/RasPi</span>
-						<span class="tech-tag">C/C++</span>
-						<span class="tech-tag">ShellScript(Bash)</span>
-						<span class="tech-tag">VBScript</span>
-					</div>
-				</div>
-			</section>
+        <div class="skill-category">
+          <h3>仮想化基盤/ハイパーバイザ</h3>
+          <p>
+            製品開発の中で、VMware vShpere 等の仮想化基盤を用いた環境構築/API
+            による制御を実施
+          </p>
+          <div class="tech-list">
+            <span class="tech-tag">VMware vSphere/ESXi</span>
+            <span class="tech-tag">vCenter</span>
+            <span class="tech-tag">VMware vSphere Web Services SDK</span>
+            <span class="tech-tag">Virtual Disk Development Kit (VDDK)</span>
+          </div>
+        </div>
 
-			<section class="ai-tools">
-				<h2>AIツール利用状況</h2>
-				
-				<div class="skill-category">
-					<h3>業務で利用しているもの</h3>
-					<div class="tech-list">
-						<span class="tech-tag">GitHub Copilot</span>
-						<span class="tech-tag">Claude Code</span>
-						<span class="tech-tag">Devin</span>
-					</div>
-				</div>
+        <div class="skill-category">
+          <h3>Network</h3>
+          <p>
+            学生時代、ネットワークプロトコル (特に無線LAN、Ethernet)
+            関連の研究を実施
+          </p>
+          <div class="tech-list">
+            <span class="tech-tag">WireShark</span>
+            <span class="tech-tag">QualNet</span>
+          </div>
+        </div>
 
-				<div class="skill-category">
-					<h3>プライベートで利用しているもの</h3>
-					<div class="tech-list">
-						<span class="tech-tag">Gemini CLI</span>
-					</div>
-				</div>
-			</section>
+        <div class="skill-category">
+          <h3>その他</h3>
+          <div class="tech-list">
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">nvidia-docker</span>
+            <span class="tech-tag">docker-compose</span>
+            <span class="tech-tag">Kubernetes</span>
+            <span class="tech-tag">Arduino/RasPi</span>
+            <span class="tech-tag">C/C++</span>
+            <span class="tech-tag">ShellScript(Bash)</span>
+            <span class="tech-tag">VBScript</span>
+          </div>
+        </div>
+      </section>
 
-			<section class="strengths">
-				<h2>強み</h2>
-				<ul>
-					<li>2000万人規模の大規模Webサービスにおける開発経験 (機械学習/バックエンド)</li>
-					<li>toBの機械学習案件において、顧客対応(問題定義)/データ分析/モデル作成/システム構築を一貫して実施した経験</li>
-					<li>実際の顧客データ (特に、「汚い」「量の少ない」データ) を利用した機械学習モデル (特に Deep Learning) の作成経験</li>
-					<li>内視鏡画像等、特殊な機材で撮影した画像データの利用経験</li>
-					<li>産業データや医療データ等、顧客のドメイン知識を要する案件の対応経験</li>
-					<li>ネットワークに対するプロトコルレベルの理解</li>
-					<li>幅広い分野に手を出すマインド (技術的探究心)、未経験の分野で結果を出す適応力</li>
-					<li>エンジニアの文化づくり (社内LT会の立ち上げ、「分報(times)」文化の推進、社内ハッカソン運営)</li>
-					<li>業務改善への提言、各種業務ツールの積極的な導入</li>
-				</ul>
-			</section>
+      <section class="ai-tools">
+        <h2>AIツール利用状況</h2>
 
-			<section class="work-experience">
-				<h2>職務経験詳細</h2>
-				
-				<div class="experience-block">
-					<h3>富士通株式会社 (2014/04～2018/08)</h3>
-					
-					<div class="project">
-						<h4>システムバックアップソフトウェアの開発 (2014/11～2016/06)</h4>
-						<p>富士通製システムバックアップソフトウェア SystemcastWizard Professional/Datacloing Wizard の開発、及びリリース後のサポート業務を実施。特に、VMware vSphere 仮想化環境対応を主担当として実施。</p>
-						<ul>
-							<li>仮想マシンのバックアップ/構成復元を数クリックで実現する機能を開発</li>
-							<li>業界初の Raw Disk Mapping (RDM) 対応を実現</li>
-							<li>部内に有識者がいない状況、かつ自身もまったく経験がない分野だったが、地道な実機調査で納期内の開発を達成</li>
-						</ul>
-						<p><strong>参考:</strong></p>
-						<ul>
-							<li><a href="http://www.fujitsu.com/jp/products/software/infrastructure-software/infrastructure-software/scw/enhancement/scw-60.html" target="_blank">FUJITSU Software SystemcastWizard Professional V6.0 強化ポイント</a></li>
-							<li><a href="http://www.fujitsu.com/jp/products/software/infrastructure-software/infrastructure-software/dcw/enhancement/dcw-sv-60.html" target="_blank">FUJITSU Software DatacloningWizard for Server V6.0 強化ポイント</a></li>
-						</ul>
-						<div class="tech-list">
-							<span class="tech-tag">C# (.NET Framework)</span>
-							<span class="tech-tag">Windows ADK</span>
-							<span class="tech-tag">VMware vSphere Web Services SDK</span>
-							<span class="tech-tag">VMware Virtual Disk Development Kit</span>
-						</div>
-					</div>
+        <div class="skill-category">
+          <h3>業務で利用しているもの</h3>
+          <div class="tech-list">
+            <span class="tech-tag">GitHub Copilot</span>
+            <span class="tech-tag">Claude Code</span>
+            <span class="tech-tag">Devin</span>
+          </div>
+        </div>
 
-					<div class="project">
-						<h4>Deep Learning 技術を用いた REST API の開発 (2016/11～2017/03)</h4>
-						<p>「Zinrai プラットフォームサービス」にて提供するサービスのうち、画像系 REST API の開発に参加。一般画像分類、シーン分類、物体検出など。</p>
-						<ul>
-							<li>Python/Flask を用いた REST API の仕様策定、教師データの作成、及びモデルの学習を担当</li>
-							<li>当時の最新手法の導入、教師データ収集/アノテーションツールの作成により、他社と遜色ない性能を実現</li>
-						</ul>
-						<p><strong>参考:</strong> <a href="http://www.fujitsu.com/jp/solutions/business-technology/ai/ai-zinrai/services/platform/" target="_blank">Zinrai プラットフォームサービス</a></p>
-						<div class="tech-list">
-							<span class="tech-tag">Python</span>
-							<span class="tech-tag">Flask</span>
-							<span class="tech-tag">BVLC Caffe</span>
-							<span class="tech-tag">Nvidia Docker</span>
-						</div>
-					</div>
+        <div class="skill-category">
+          <h3>プライベートで利用しているもの</h3>
+          <div class="tech-list">
+            <span class="tech-tag">Gemini CLI</span>
+          </div>
+        </div>
+      </section>
 
-					<div class="project">
-						<h4>Deep Learning 技術のコンサルティング、PoC、及び顧客システム開発 (2016/07～)</h4>
-						<p>お客様業務のヒアリングから機械学習モデルの作成、場合によっては顧客システムの開発まで一貫して実施。「とりあえず業務の改善がしたい」「流行の Deep Learning 技術をなにか業務に取り入れたい」といった曖昧な案件も経験。</p>
-						<p><strong>参考:</strong></p>
-						<ul>
-							<li><a href="http://pr.fujitsu.com/jp/news/2017/05/15-2.html" target="_blank">道路陥没を防ぐ川崎地質の路面下空洞探査に富士通の AI 技術を活用</a></li>
-							<li><a href="http://www.fujitsu.com/jp/solutions/business-technology/ai/ai-zinrai/services/integration/" target="_blank">Zinrai導入支援／構築／運用サービス</a></li>
-						</ul>
-						<div class="tech-list">
-							<span class="tech-tag">Python</span>
-							<span class="tech-tag">TensorFlow</span>
-							<span class="tech-tag">Keras</span>
-							<span class="tech-tag">OpenCV</span>
-						</div>
-					</div>
-				</div>
+      <section class="strengths">
+        <h2>強み</h2>
+        <ul>
+          <li>
+            2000万人規模の大規模Webサービスにおける開発経験
+            (機械学習/バックエンド)
+          </li>
+          <li>
+            toBの機械学習案件において、顧客対応(問題定義)/データ分析/モデル作成/システム構築を一貫して実施した経験
+          </li>
+          <li>
+            実際の顧客データ (特に、「汚い」「量の少ない」データ)
+            を利用した機械学習モデル (特に Deep Learning) の作成経験
+          </li>
+          <li>内視鏡画像等、特殊な機材で撮影した画像データの利用経験</li>
+          <li>
+            産業データや医療データ等、顧客のドメイン知識を要する案件の対応経験
+          </li>
+          <li>ネットワークに対するプロトコルレベルの理解</li>
+          <li>
+            幅広い分野に手を出すマインド
+            (技術的探究心)、未経験の分野で結果を出す適応力
+          </li>
+          <li>
+            エンジニアの文化づくり
+            (社内LT会の立ち上げ、「分報(times)」文化の推進、社内ハッカソン運営)
+          </li>
+          <li>業務改善への提言、各種業務ツールの積極的な導入</li>
+        </ul>
+      </section>
 
-				<div class="experience-block">
-					<h3>株式会社スカイディスク (2018/08～2020/02)</h3>
-					
-					<div class="project">
-						<h4>Deep Learning技術を活用した外観検査装置の開発 (2018/08～2018/11)</h4>
-						<p>Deep Learningによる画像認識技術を応用した、工場ライン向け外観検査装置を開発。撮影方法を工夫し、カメラ1台のみで様々な異常の検出に対応。</p>
-						<p><strong>参考:</strong> <a href="https://skydisc.jp/information/1265/" target="_blank">AI外観検査機をIoT/M2M展秋で初披露</a></p>
-						<div class="tech-list">
-							<span class="tech-tag">Python</span>
-							<span class="tech-tag">TensorFlow</span>
-							<span class="tech-tag">Keras</span>
-							<span class="tech-tag">OpenCV</span>
-							<span class="tech-tag">Flask</span>
-						</div>
-					</div>
+      <section class="work-experience">
+        <h2>職務経験詳細</h2>
 
-					<div class="project">
-						<h4>機械学習技術のコンサルティング、PoC、及び顧客システム開発 (2018/08～2020/02)</h4>
-						<p>お客様業務のヒアリングから機械学習モデルの作成、顧客システムの開発まで一貫して実施。主に製造業を対象として、顧客ドメイン知識の理解を要する案件を多数経験。</p>
-						<p><strong>参考:</strong> <a href="https://skydisc.jp/service/sky_ai/" target="_blank">SkyAI</a></p>
-					</div>
-				</div>
+        <div class="experience-block">
+          <h3>富士通株式会社 (2014/04～2018/08)</h3>
 
-				<div class="experience-block">
-					<h3>株式会社AIメディカルサービス (2020/02～2021/02)</h3>
-					
-					<div class="project">
-						<h4>Deep Learning技術を用いた内視鏡 AI 製品の研究開発</h4>
-						<p>内視鏡画像から病変を検出する AI モデルの開発を担当。特殊なカメラの特性や医療機関毎のバイアスを意識した画像処理・モデル開発を実施。</p>
-						<ul>
-							<li>データ管理 / アノテーションツール</li>
-							<li>医師の判別スキルを測定するツールの開発 (薬機申請支援)</li>
-						</ul>
-						<p><strong>参考:</strong> <a href="https://www.ai-ms.com/news/product/20240304" target="_blank">早期胃がんに特化したAI搭載の内視鏡画像診断支援ソフトウェアを発売</a></p>
-						<div class="tech-list">
-							<span class="tech-tag">Python</span>
-							<span class="tech-tag">PyTorch</span>
-							<span class="tech-tag">OpenCV</span>
-							<span class="tech-tag">ffmpeg</span>
-							<span class="tech-tag">Flask</span>
-							<span class="tech-tag">Pandas</span>
-							<span class="tech-tag">Google Compute Engine</span>
-						</div>
-					</div>
+          <div class="project">
+            <h4>システムバックアップソフトウェアの開発 (2014/11～2016/06)</h4>
+            <p>
+              富士通製システムバックアップソフトウェア SystemcastWizard
+              Professional/Datacloing Wizard
+              の開発、及びリリース後のサポート業務を実施。特に、VMware vSphere
+              仮想化環境対応を主担当として実施。
+            </p>
+            <ul>
+              <li>
+                仮想マシンのバックアップ/構成復元を数クリックで実現する機能を開発
+              </li>
+              <li>業界初の Raw Disk Mapping (RDM) 対応を実現</li>
+              <li>
+                部内に有識者がいない状況、かつ自身もまったく経験がない分野だったが、地道な実機調査で納期内の開発を達成
+              </li>
+            </ul>
+            <p><strong>参考:</strong></p>
+            <ul>
+              <li>
+                <a
+                  href="http://www.fujitsu.com/jp/products/software/infrastructure-software/infrastructure-software/scw/enhancement/scw-60.html"
+                  target="_blank"
+                  >FUJITSU Software SystemcastWizard Professional V6.0
+                  強化ポイント</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://www.fujitsu.com/jp/products/software/infrastructure-software/infrastructure-software/dcw/enhancement/dcw-sv-60.html"
+                  target="_blank"
+                  >FUJITSU Software DatacloningWizard for Server V6.0
+                  強化ポイント</a
+                >
+              </li>
+            </ul>
+            <div class="tech-list">
+              <span class="tech-tag">C# (.NET Framework)</span>
+              <span class="tech-tag">Windows ADK</span>
+              <span class="tech-tag">VMware vSphere Web Services SDK</span>
+              <span class="tech-tag">VMware Virtual Disk Development Kit</span>
+            </div>
+          </div>
 
-					<div class="project">
-						<h4>医療機関との共同研究</h4>
-						<p>内視鏡を扱う医療機関と共同で、論文発表及び将来の製品開発に向けた共同研究を実施中。他社では実績がない領域での、難易度の高いモデル作成を行う。</p>
-						<p><strong>参考:</strong> <a href="https://www.ai-ms.com/information/?category=achievements&page=1" target="_blank">ACHIEVEMENTS | INFORMATION | AIメディカルサービス</a></p>
-					</div>
+          <div class="project">
+            <h4>
+              Deep Learning 技術を用いた REST API の開発 (2016/11～2017/03)
+            </h4>
+            <p>
+              「Zinrai
+              プラットフォームサービス」にて提供するサービスのうち、画像系 REST
+              API の開発に参加。一般画像分類、シーン分類、物体検出など。
+            </p>
+            <ul>
+              <li>
+                Python/Flask を用いた REST API
+                の仕様策定、教師データの作成、及びモデルの学習を担当
+              </li>
+              <li>
+                当時の最新手法の導入、教師データ収集/アノテーションツールの作成により、他社と遜色ない性能を実現
+              </li>
+            </ul>
+            <p>
+              <strong>参考:</strong>
+              <a
+                href="http://www.fujitsu.com/jp/solutions/business-technology/ai/ai-zinrai/services/platform/"
+                target="_blank">Zinrai プラットフォームサービス</a
+              >
+            </p>
+            <div class="tech-list">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Flask</span>
+              <span class="tech-tag">BVLC Caffe</span>
+              <span class="tech-tag">Nvidia Docker</span>
+            </div>
+          </div>
 
-					<div class="project">
-						<h4>開発基盤の構築・運用</h4>
-						<p>モデル開発で利用するオンプレ開発基盤の構築及び運用を実施。DGX A100 を含むGPUサーバ (GPU約20台)、その他ストレージなど。製品で利用するモデルの継続的改善、開発環境管理、及び薬機申請に向けたエビデンス取得のため、MLOps 基盤 (MLflow) を導入。</p>
-						<div class="tech-list">
-							<span class="tech-tag">Ubuntu</span>
-							<span class="tech-tag">CentOS</span>
-							<span class="tech-tag">KVM</span>
-							<span class="tech-tag">Kubernetes</span>
-							<span class="tech-tag">NVIDIA Docker</span>
-							<span class="tech-tag">MLFlow</span>
-						</div>
-					</div>
-				</div>
+          <div class="project">
+            <h4>
+              Deep Learning 技術のコンサルティング、PoC、及び顧客システム開発
+              (2016/07～)
+            </h4>
+            <p>
+              お客様業務のヒアリングから機械学習モデルの作成、場合によっては顧客システムの開発まで一貫して実施。「とりあえず業務の改善がしたい」「流行の
+              Deep Learning
+              技術をなにか業務に取り入れたい」といった曖昧な案件も経験。
+            </p>
+            <p><strong>参考:</strong></p>
+            <ul>
+              <li>
+                <a
+                  href="http://pr.fujitsu.com/jp/news/2017/05/15-2.html"
+                  target="_blank"
+                  >道路陥没を防ぐ川崎地質の路面下空洞探査に富士通の AI
+                  技術を活用</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://www.fujitsu.com/jp/solutions/business-technology/ai/ai-zinrai/services/integration/"
+                  target="_blank">Zinrai導入支援／構築／運用サービス</a
+                >
+              </li>
+            </ul>
+            <div class="tech-list">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">Keras</span>
+              <span class="tech-tag">OpenCV</span>
+            </div>
+          </div>
+        </div>
 
-				<div class="experience-block">
-					<h3>株式会社MIXI (2021/03～現在)</h3>
-					
-					<div class="project">
-						<h4>写真アルバムサービスにおける各種機械学習モデルの作成・運用 (2021/03～進行中)</h4>
-						<p>家族向け写真アルバムサービス「みてね」で運用されている各種機械学習モデル(顔検出器など)の改善や開発プロセスの整備、数年前から運用されている機械学習システムの技術的負債解消作業など。</p>
-						<div class="tech-list">
-							<span class="tech-tag">Python</span>
-							<span class="tech-tag">TensorFlow</span>
-							<span class="tech-tag">PyTorch</span>
-						</div>
-					</div>
+        <div class="experience-block">
+          <h3>株式会社スカイディスク (2018/08～2020/02)</h3>
 
-					<div class="project">
-						<h4>写真アルバムサービスのバックエンド開発 (2022/10～進行中)</h4>
-						<p>家族向け写真アルバムサービス「みてね」におけるバックエンド開発 (Ruby on Rails)。主に「1秒動画」機能や各種レコメンド機能など。</p>
-						<div class="tech-list">
-							<span class="tech-tag">Ruby</span>
-							<span class="tech-tag">Ruby on Rails</span>
-							<span class="tech-tag">Sidekiq</span>
-							<span class="tech-tag">FFmpeg</span>
-						</div>
-					</div>
-				</div>
-			</section>
+          <div class="project">
+            <h4>
+              Deep Learning技術を活用した外観検査装置の開発 (2018/08～2018/11)
+            </h4>
+            <p>
+              Deep
+              Learningによる画像認識技術を応用した、工場ライン向け外観検査装置を開発。撮影方法を工夫し、カメラ1台のみで様々な異常の検出に対応。
+            </p>
+            <p>
+              <strong>参考:</strong>
+              <a href="https://skydisc.jp/information/1265/" target="_blank"
+                >AI外観検査機をIoT/M2M展秋で初披露</a
+              >
+            </p>
+            <div class="tech-list">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">Keras</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">Flask</span>
+            </div>
+          </div>
 
-			<section class="others">
-				<h2>その他</h2>
-				<ul>
-					<li>社内ハッカソンの運営に参加 (富士通時代) - 「自転車向けナビゲーションシステム」のアイデアで1度優勝、その後運営側へ
-						<br><strong>参考:</strong> <a href="http://tech.nikkeibp.co.jp/it/atcl/column/15/020200024/" target="_blank">受託型SEを"共創人材"へ、ハッカソンを推進する富士通</a></li>
-					<li>社内LT会主催 (SKYDISC時代)
-						<br><strong>参考:</strong> <a href="https://www.wantedly.com/companies/skydisc/post_articles/175638" target="_blank">おやじベンチャーのここが良い「人に聞かせたくなる社内LT会」</a></li>
-					<li>フランス開催のロケット打ち上げ競技会 C'Space に参加 (学生時代) - 搭載する電子機器の配線や配置の設計、及び実装を担当
-						<br><strong>参考:</strong> <a href="http://www.tobata.kyutech.ac.jp/node/945" target="_blank">フランスの大会で学生ロケットを打ち上げました！</a></li>
-				</ul>
-			</section>
-		</main>
+          <div class="project">
+            <h4>
+              機械学習技術のコンサルティング、PoC、及び顧客システム開発
+              (2018/08～2020/02)
+            </h4>
+            <p>
+              お客様業務のヒアリングから機械学習モデルの作成、顧客システムの開発まで一貫して実施。主に製造業を対象として、顧客ドメイン知識の理解を要する案件を多数経験。
+            </p>
+            <p>
+              <strong>参考:</strong>
+              <a href="https://skydisc.jp/service/sky_ai/" target="_blank"
+                >SkyAI</a
+              >
+            </p>
+          </div>
+        </div>
 
-		<script>
-			(function() {
-				const themeBtn = document.getElementById('theme-btn');
-				const body = document.body;
+        <div class="experience-block">
+          <h3>株式会社AIメディカルサービス (2020/02～2021/02)</h3>
 
-				if (!themeBtn) {
-					console.error('Theme button not found');
-					return;
-				}
+          <div class="project">
+            <h4>Deep Learning技術を用いた内視鏡 AI 製品の研究開発</h4>
+            <p>
+              内視鏡画像から病変を検出する AI
+              モデルの開発を担当。特殊なカメラの特性や医療機関毎のバイアスを意識した画像処理・モデル開発を実施。
+            </p>
+            <ul>
+              <li>データ管理 / アノテーションツール</li>
+              <li>医師の判別スキルを測定するツールの開発 (薬機申請支援)</li>
+            </ul>
+            <p>
+              <strong>参考:</strong>
+              <a
+                href="https://www.ai-ms.com/news/product/20240304"
+                target="_blank"
+                >早期胃がんに特化したAI搭載の内視鏡画像診断支援ソフトウェアを発売</a
+              >
+            </p>
+            <div class="tech-list">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">ffmpeg</span>
+              <span class="tech-tag">Flask</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">Google Compute Engine</span>
+            </div>
+          </div>
 
-				// ローカルストレージからテーマを読み込み
-				const savedTheme = localStorage.getItem('theme');
-				if (savedTheme) {
-					body.setAttribute('data-theme', savedTheme);
-					themeBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
-				}
+          <div class="project">
+            <h4>医療機関との共同研究</h4>
+            <p>
+              内視鏡を扱う医療機関と共同で、論文発表及び将来の製品開発に向けた共同研究を実施中。他社では実績がない領域での、難易度の高いモデル作成を行う。
+            </p>
+            <p>
+              <strong>参考:</strong>
+              <a
+                href="https://www.ai-ms.com/information/?category=achievements&page=1"
+                target="_blank"
+                >ACHIEVEMENTS | INFORMATION | AIメディカルサービス</a
+              >
+            </p>
+          </div>
 
-				// システムの設定を確認
-				if (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-					body.setAttribute('data-theme', 'dark');
-					themeBtn.textContent = '☀️';
-				}
+          <div class="project">
+            <h4>開発基盤の構築・運用</h4>
+            <p>
+              モデル開発で利用するオンプレ開発基盤の構築及び運用を実施。DGX A100
+              を含むGPUサーバ
+              (GPU約20台)、その他ストレージなど。製品で利用するモデルの継続的改善、開発環境管理、及び薬機申請に向けたエビデンス取得のため、MLOps
+              基盤 (MLflow) を導入。
+            </p>
+            <div class="tech-list">
+              <span class="tech-tag">Ubuntu</span>
+              <span class="tech-tag">CentOS</span>
+              <span class="tech-tag">KVM</span>
+              <span class="tech-tag">Kubernetes</span>
+              <span class="tech-tag">NVIDIA Docker</span>
+              <span class="tech-tag">MLFlow</span>
+            </div>
+          </div>
+        </div>
 
-				themeBtn.addEventListener('click', () => {
-					const currentTheme = body.getAttribute('data-theme');
-					const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-					
-					body.setAttribute('data-theme', newTheme);
-					themeBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-					
-					// ローカルストレージに保存
-					localStorage.setItem('theme', newTheme);
-				});
-			})();
-		</script>
-	</body>
+        <div class="experience-block">
+          <h3>株式会社MIXI (2021/03～現在)</h3>
+
+          <div class="project">
+            <h4>
+              写真アルバムサービスにおける各種機械学習モデルの作成・運用
+              (2021/03～進行中)
+            </h4>
+            <p>
+              家族向け写真アルバムサービス「みてね」で運用されている各種機械学習モデル(顔検出器など)の改善や開発プロセスの整備、数年前から運用されている機械学習システムの技術的負債解消作業など。
+            </p>
+            <div class="tech-list">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">PyTorch</span>
+            </div>
+          </div>
+
+          <div class="project">
+            <h4>写真アルバムサービスのバックエンド開発 (2022/10～進行中)</h4>
+            <p>
+              家族向け写真アルバムサービス「みてね」におけるバックエンド開発
+              (Ruby on Rails)。主に「1秒動画」機能や各種レコメンド機能など。
+            </p>
+            <div class="tech-list">
+              <span class="tech-tag">Ruby</span>
+              <span class="tech-tag">Ruby on Rails</span>
+              <span class="tech-tag">Sidekiq</span>
+              <span class="tech-tag">FFmpeg</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="others">
+        <h2>その他</h2>
+        <ul>
+          <li>
+            社内ハッカソンの運営に参加 (富士通時代) -
+            「自転車向けナビゲーションシステム」のアイデアで1度優勝、その後運営側へ
+            <br /><strong>参考:</strong>
+            <a
+              href="http://tech.nikkeibp.co.jp/it/atcl/column/15/020200024/"
+              target="_blank"
+              >受託型SEを"共創人材"へ、ハッカソンを推進する富士通</a
+            >
+          </li>
+          <li>
+            社内LT会主催 (SKYDISC時代)
+            <br /><strong>参考:</strong>
+            <a
+              href="https://www.wantedly.com/companies/skydisc/post_articles/175638"
+              target="_blank"
+              >おやじベンチャーのここが良い「人に聞かせたくなる社内LT会」</a
+            >
+          </li>
+          <li>
+            フランス開催のロケット打ち上げ競技会 C'Space に参加 (学生時代) -
+            搭載する電子機器の配線や配置の設計、及び実装を担当
+            <br /><strong>参考:</strong>
+            <a href="http://www.tobata.kyutech.ac.jp/node/945" target="_blank"
+              >フランスの大会で学生ロケットを打ち上げました！</a
+            >
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <script>
+      ;(function () {
+        const themeBtn = document.getElementById('theme-btn')
+        const body = document.body
+
+        if (!themeBtn) {
+          console.error('Theme button not found')
+          return
+        }
+
+        // ローカルストレージからテーマを読み込み
+        const savedTheme = localStorage.getItem('theme')
+        if (savedTheme) {
+          body.setAttribute('data-theme', savedTheme)
+          themeBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙'
+        }
+
+        // システムの設定を確認
+        if (
+          !savedTheme &&
+          window.matchMedia &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches
+        ) {
+          body.setAttribute('data-theme', 'dark')
+          themeBtn.textContent = '☀️'
+        }
+
+        themeBtn.addEventListener('click', () => {
+          const currentTheme = body.getAttribute('data-theme')
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
+
+          body.setAttribute('data-theme', newTheme)
+          themeBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙'
+
+          // ローカルストレージに保存
+          localStorage.setItem('theme', newTheme)
+        })
+      })()
+    </script>
+  </body>
 </html>
