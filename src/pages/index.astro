@@ -19,6 +19,7 @@ import '../styles/resume.css'
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/curriculum-vitae/css/all.min.css" />
   </head>
   <body>
     <div class="theme-toggle">
@@ -552,6 +553,20 @@ import '../styles/resume.css'
         </div>
       </section>
 
+      <section class="network-diagram">
+        <h2>ホームネットワーク構成</h2>
+        <div class="mermaid">
+          graph TD
+            Router["<i class='fas fa-wifi'></i> NEC Aterm WX11000T12"] --> Switch["<i class='fas fa-network-wired'></i> NETGEAR XS505M"]
+            Switch --> MainPC["<i class='fas fa-desktop'></i> メインPC<br>Ryzen 9 5950X<br>64GB RAM<br>RTX4090"]
+            Switch --> Storage["<i class='fas fa-hdd'></i> ストレージサーバ<br>8TB HDD x6<br>Windows Storage Spaces<br>VPN on Tailscale"]
+            Router --> SwitchBot["<i class='fas fa-house-signal'></i> SwitchBot Hub mini"]
+            SwitchBot --> CO2["<i class='fas fa-wind'></i> SwitchBot CO2センサー"]
+            SwitchBot --> SmartPlug["<i class='fas fa-plug'></i> SwitchBot スマートプラグ"]
+            Router --> NatureRemo["<i class='fas fa-temperature-high'></i> Nature Remo E"]
+        </div>
+      </section>
+
       <section class="others">
         <h2>その他</h2>
         <ul>
@@ -587,6 +602,19 @@ import '../styles/resume.css'
     </main>
 
     <script>
+      import mermaid from 'mermaid';
+      
+      document.addEventListener('DOMContentLoaded', () => {
+        mermaid.initialize({ 
+          startOnLoad: true,
+          theme: document.body.getAttribute('data-theme') === 'dark' ? 'dark' : 'default',
+          flowchart: {
+            htmlLabels: true,
+            curve: 'cardinal',
+          },
+        });
+      });
+      
       ;(function () {
         const themeBtn = document.getElementById('theme-btn')
         const body = document.body
@@ -601,6 +629,11 @@ import '../styles/resume.css'
         if (savedTheme) {
           body.setAttribute('data-theme', savedTheme)
           themeBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙'
+          
+          // Mermaidテーマの更新
+          if (typeof mermaid !== 'undefined') {
+            mermaid.initialize({ theme: savedTheme === 'dark' ? 'dark' : 'default' });
+          }
         }
 
         // システムの設定を確認
@@ -611,6 +644,11 @@ import '../styles/resume.css'
         ) {
           body.setAttribute('data-theme', 'dark')
           themeBtn.textContent = '☀️'
+          
+          // Mermaidテーマの更新
+          if (typeof mermaid !== 'undefined') {
+            mermaid.initialize({ theme: 'dark' });
+          }
         }
 
         themeBtn.addEventListener('click', () => {
@@ -622,6 +660,11 @@ import '../styles/resume.css'
 
           // ローカルストレージに保存
           localStorage.setItem('theme', newTheme)
+          
+          // Mermaidテーマの更新
+          if (typeof mermaid !== 'undefined') {
+            mermaid.initialize({ theme: newTheme === 'dark' ? 'dark' : 'default' });
+          }
         })
       })()
     </script>

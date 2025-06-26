@@ -297,6 +297,22 @@ h4 {
   }
 }
 
+.network-diagram {
+  margin-bottom: 2rem;
+}
+
+.network-diagram .mermaid {
+  background-color: var(--bg-color);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.network-diagram .fa,
+.network-diagram .fas {
+  margin-right: 5px;
+}
+
 @media print {
   .theme-toggle {
     display: none;
