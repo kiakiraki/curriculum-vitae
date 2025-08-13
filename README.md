@@ -27,14 +27,14 @@ npm install
 
 プロジェクトのルートディレクトリで以下のコマンドを実行してください。
 
-| コマンド | 動作 |
-| :--- | :--- |
-| `npm install` | 依存関係をインストール |
-| `npm run dev` | 開発サーバーを起動 (`localhost:4321`) |
-| `npm run build` | 本番用サイトを `./dist/` にビルド |
-| `npm run preview` | ビルド結果をローカルでプレビュー |
-| `npm run lint` | ESLintでコードの静的解析を実行 |
-| `npm run format`| Prettierでコードをフォーマット |
+| コマンド          | 動作                                  |
+| :---------------- | :------------------------------------ |
+| `npm install`     | 依存関係をインストール                |
+| `npm run dev`     | 開発サーバーを起動 (`localhost:4321`) |
+| `npm run build`   | 本番用サイトを `./dist/` にビルド     |
+| `npm run preview` | ビルド結果をローカルでプレビュー      |
+| `npm run lint`    | ESLintでコードの静的解析を実行        |
+| `npm run format`  | Prettierでコードをフォーマット        |
 
 ## 🏗️ ビルドとデプロイ
 
@@ -81,9 +81,9 @@ cv-website/
 <section class="network-diagram">
   <h2>ホームネットワーク構成</h2>
   <div class="mermaid">
-    graph TD
-      Router["<i class='fas fa-wifi'></i> NEC Aterm WX11000T12"] --> Switch["<i class='fas fa-network-wired'></i> NETGEAR XS505M"]
-      <!-- ... -->
+    graph TD Router["<i class="fas fa-wifi"></i> NEC Aterm WX11000T12"] -->
+    Switch["<i class="fas fa-network-wired"></i> NETGEAR XS505M"]
+    <!-- ... -->
   </div>
 </section>
 ```
