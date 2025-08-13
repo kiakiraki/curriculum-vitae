@@ -556,15 +556,23 @@ import '../styles/resume.css'
       <section class="network-diagram">
         <h2>ホームネットワーク構成</h2>
         <div class="mermaid">
-          graph TD
-            Router["<i class='fas fa-wifi'></i> NEC Aterm WX11000T12"] --> Switch["<i class='fas fa-network-wired'></i> NETGEAR XS505M"]
-            Switch --> MainPC["<i class='fas fa-desktop'></i> メインPC<br>Ryzen 9 5950X<br>64GB RAM<br>RTX4090"]
-            Switch --> Storage["<i class='fas fa-hdd'></i> ストレージサーバ<br>8TB HDD x6<br>Windows Storage Spaces<br>VPN on Tailscale"]
-            Router --> SwitchBot["<i class='fas fa-house-signal'></i> SwitchBot Hub mini"]
-            SwitchBot --> CO2["<i class='fas fa-wind'></i> SwitchBot CO2センサー"]
-            SwitchBot --> SmartPlug["<i class='fas fa-plug'></i> SwitchBot スマートプラグ"]
-            Router --> NatureRemo["<i class='fas fa-bolt'></i> Nature Remo E"]
-            NatureRemo --> SmartMeter["<i class='fas fa-chart-line'></i> スマートメーター"]
+          graph TD Router["&lt;i class=&quot;fas fa-wifi&quot;&gt;&lt;/i&gt; NEC
+          Aterm WX11000T12"] --&gt; Switch["&lt;i class=&quot;fas
+          fa-network-wired&quot;&gt;&lt;/i&gt; NETGEAR XS505M"] Switch --&gt;
+          MainPC["&lt;i class=&quot;fas fa-desktop&quot;&gt;&lt;/i&gt;
+          メインPC&lt;br /&gt;Ryzen 9 5950X&lt;br /&gt;64GB RAM&lt;br
+          /&gt;RTX4090"] Switch --&gt; Storage["&lt;i class=&quot;fas
+          fa-hdd&quot; &gt;&lt;/i&gt; ストレージサーバ&lt;br /&gt;8TB HDD
+          x6&lt;br /&gt;Windows Storage Spaces&lt;br /&gt;VPN on Tailscale"]
+          Router --&gt; SwitchBot["&lt;i class=&quot;fas
+          fa-house-signal&quot;&gt;&lt;/i&gt; SwitchBot Hub mini"] SwitchBot
+          --&gt; CO2["&lt;i class=&quot;fas fa-wind&quot;&gt;&lt;/i&gt;
+          SwitchBot CO2センサー"] SwitchBot --&gt; SmartPlug["&lt;i
+          class=&quot;fas fa-plug&quot;&gt;&lt;/i&gt; SwitchBot スマートプラグ"]
+          Router --&gt; NatureRemo["&lt;i class=&quot;fas
+          fa-bolt&quot;&gt;&lt;/i&gt; Nature Remo E"] NatureRemo --&gt;
+          SmartMeter["&lt;i class=&quot;fas fa-chart-line&quot;&gt;&lt;/i&gt;
+          スマートメーター"]
         </div>
       </section>
 
@@ -603,19 +611,21 @@ import '../styles/resume.css'
     </main>
 
     <script>
-      import mermaid from 'mermaid';
-      
+      import mermaid from 'mermaid'
+
       document.addEventListener('DOMContentLoaded', () => {
-        mermaid.initialize({ 
+        mermaid.initialize({
           startOnLoad: true,
-          theme: document.body.getAttribute('data-theme') === 'dark' ? 'dark' : 'default',
+          theme:
+            document.body.getAttribute('data-theme') === 'dark'
+              ? 'dark'
+              : 'default',
           flowchart: {
             htmlLabels: true,
             curve: 'cardinal',
           },
-        });
-      });
-      
+        })
+      })
       ;(function () {
         const themeBtn = document.getElementById('theme-btn')
         const body = document.body
@@ -630,10 +640,12 @@ import '../styles/resume.css'
         if (savedTheme) {
           body.setAttribute('data-theme', savedTheme)
           themeBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙'
-          
+
           // Mermaidテーマの更新
           if (typeof mermaid !== 'undefined') {
-            mermaid.initialize({ theme: savedTheme === 'dark' ? 'dark' : 'default' });
+            mermaid.initialize({
+              theme: savedTheme === 'dark' ? 'dark' : 'default',
+            })
           }
         }
 
@@ -645,10 +657,10 @@ import '../styles/resume.css'
         ) {
           body.setAttribute('data-theme', 'dark')
           themeBtn.textContent = '☀️'
-          
+
           // Mermaidテーマの更新
           if (typeof mermaid !== 'undefined') {
-            mermaid.initialize({ theme: 'dark' });
+            mermaid.initialize({ theme: 'dark' })
           }
         }
 
@@ -661,10 +673,12 @@ import '../styles/resume.css'
 
           // ローカルストレージに保存
           localStorage.setItem('theme', newTheme)
-          
+
           // Mermaidテーマの更新
           if (typeof mermaid !== 'undefined') {
-            mermaid.initialize({ theme: newTheme === 'dark' ? 'dark' : 'default' });
+            mermaid.initialize({
+              theme: newTheme === 'dark' ? 'dark' : 'default',
+            })
           }
         })
       })()
