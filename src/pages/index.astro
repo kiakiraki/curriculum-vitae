@@ -556,25 +556,18 @@ import '../styles/resume.css'
       <section class="network-diagram">
         <h2>ホームネットワーク構成</h2>
         <div class="mermaid">
-          graph TD
-            Router["<i class='fas fa-wifi'></i> NEC Aterm WX11000T12"]
-            Switch["<i class='fas fa-network-wired'></i> NETGEAR XS505M"]
-            MainPC["<i class='fas fa-desktop'></i> メインPC<br/>Ryzen 9 5950X<br/>64GB RAM<br/>RTX4090"]
-            Storage["<i class='fas fa-hdd'></i> ストレージサーバ<br/>8TB HDD x6<br/>Windows Storage Spaces<br/>VPN on Tailscale"]
-            SwitchBot["<i class='fas fa-house-signal'></i> SwitchBot Hub mini"]
-            CO2["<i class='fas fa-wind'></i> SwitchBot CO2センサー"]
-            SmartPlug["<i class='fas fa-plug'></i> SwitchBot スマートプラグ"]
-            NatureRemo["<i class='fas fa-bolt'></i> Nature Remo E"]
-            SmartMeter["<i class='fas fa-chart-line'></i> スマートメーター"]
-            
-            Router --> Switch
-            Switch --> MainPC
-            Switch --> Storage
-            Router --> SwitchBot
-            SwitchBot --> CO2
-            SwitchBot --> SmartPlug
-            Router --> NatureRemo
-            NatureRemo --> SmartMeter
+          graph TD Router["<i class="fas fa-wifi"></i> NEC Aterm WX11000T12"] Switch["<i
+            class="fas fa-network-wired"></i> NETGEAR XS505M"] MainPC["<i
+            class="fas fa-desktop"></i> メインPC<br />Ryzen 9 5950X<br />64GB
+          RAM<br />RTX4090"] Storage["<i class="fas fa-hdd"></i> ストレージサーバ<br
+          />8TB HDD x6<br />Windows Storage Spaces<br />VPN on Tailscale"]
+          SwitchBot["<i class="fas fa-house-signal"></i> SwitchBot Hub mini"] CO2["<i
+            class="fas fa-wind"></i> SwitchBot CO2センサー"] SmartPlug["<i
+            class="fas fa-plug"></i> SwitchBot スマートプラグ"] NatureRemo["<i
+            class="fas fa-bolt"></i> Nature Remo E"] SmartMeter["<i
+            class="fas fa-chart-line"></i> スマートメーター"] Router --> Switch Switch
+          --> MainPC Switch --> Storage Router --> SwitchBot SwitchBot --> CO2 SwitchBot
+          --> SmartPlug Router --> NatureRemo NatureRemo --> SmartMeter
         </div>
       </section>
 
