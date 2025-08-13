@@ -313,6 +313,41 @@ h4 {
   margin-right: 5px;
 }
 
+.oss-contributions .contribution-block {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: var(--bg-color);
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.oss-contributions .contribution-block p {
+  margin-bottom: 15px;
+  color: var(--secondary-text);
+}
+
+.oss-contributions .contribution-block ul {
+  margin: 15px 0 15px 20px;
+  list-style-type: disc;
+}
+
+.oss-contributions .contribution-block li {
+  margin-bottom: 12px;
+  color: var(--secondary-text);
+  line-height: 1.6;
+}
+
+.oss-contributions .contribution-block li strong {
+  color: var(--text-color);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.oss-contributions .contribution-block li a {
+  color: var(--link-color);
+  font-weight: 500;
+}
+
 @media print {
   .theme-toggle {
     display: none;
