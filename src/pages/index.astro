@@ -556,7 +556,8 @@ import '../styles/resume.css'
       <section class="network-diagram">
         <h2>ホームネットワーク構成</h2>
         <div class="mermaid">
-          {`graph TD
+          {
+            `graph TD
             Router["<i class='fas fa-wifi'></i> NEC Aterm WX11000T12"]
             Switch["<i class='fas fa-network-wired'></i> NETGEAR XS505M"]
             MainPC["<i class='fas fa-desktop'></i> メインPC<br/>Ryzen 9 5950X<br/>64GB RAM<br/>RTX4090"]
@@ -574,7 +575,8 @@ import '../styles/resume.css'
             SwitchBot --> CO2
             SwitchBot --> SmartPlug
             Router --> NatureRemo
-            NatureRemo --> SmartMeter`}
+            NatureRemo --> SmartMeter`
+          }
         </div>
       </section>
 
