@@ -23,7 +23,23 @@ import '../styles/resume.css'
   </head>
   <body>
     <div class="theme-toggle">
-      <button id="theme-btn" aria-label="Toggle dark mode">🌙</button>
+      <button
+        id="theme-btn"
+        class="toggle-btn"
+        type="button"
+        aria-label="Toggle dark mode"
+      >
+        🌙
+      </button>
+      <button
+        id="pdf-btn"
+        class="toggle-btn"
+        type="button"
+        aria-label="Toggle PDF layout"
+        aria-pressed="false"
+      >
+        PDF
+      </button>
     </div>
 
     <main class="container">
@@ -669,40 +685,78 @@ import '../styles/resume.css'
     <script>
       import mermaid from 'mermaid'
 
+      const mermaidFlowchart = {
+        htmlLabels: true,
+        curve: 'cardinal',
+      }
+
+      const getMermaidTheme = () => {
+        const isPdfLayout = document.body.getAttribute('data-layout') === 'pdf'
+        if (isPdfLayout) {
+          return 'default'
+        }
+
+        return document.body.getAttribute('data-theme') === 'dark'
+          ? 'dark'
+          : 'default'
+      }
+
+      const updateMermaidTheme = () => {
+        if (typeof mermaid === 'undefined') {
+          return
+        }
+
+        mermaid.initialize({
+          theme: getMermaidTheme(),
+          flowchart: mermaidFlowchart,
+        })
+      }
+
       document.addEventListener('DOMContentLoaded', () => {
         mermaid.initialize({
           startOnLoad: true,
-          theme:
-            document.body.getAttribute('data-theme') === 'dark'
-              ? 'dark'
-              : 'default',
-          flowchart: {
-            htmlLabels: true,
-            curve: 'cardinal',
-          },
+          theme: getMermaidTheme(),
+          flowchart: mermaidFlowchart,
         })
       })
       ;(function () {
         const themeBtn = document.getElementById('theme-btn')
+        const pdfBtn = document.getElementById('pdf-btn')
         const body = document.body
+        let printLayoutForced = false
 
         if (!themeBtn) {
           console.error('Theme button not found')
           return
         }
 
+        const applyTheme = (theme) => {
+          body.setAttribute('data-theme', theme)
+          themeBtn.textContent = theme === 'dark' ? '☀️' : '🌙'
+        }
+
+        const setPdfButtonState = (enabled) => {
+          if (!pdfBtn) {
+            return
+          }
+
+          pdfBtn.setAttribute('aria-pressed', enabled ? 'true' : 'false')
+        }
+
+        const applyPdfLayout = (enabled) => {
+          if (enabled) {
+            body.setAttribute('data-layout', 'pdf')
+          } else {
+            body.removeAttribute('data-layout')
+          }
+
+          setPdfButtonState(enabled)
+        }
+
         // ローカルストレージからテーマを読み込み
         const savedTheme = localStorage.getItem('theme')
         if (savedTheme) {
-          body.setAttribute('data-theme', savedTheme)
-          themeBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙'
-
-          // Mermaidテーマの更新
-          if (typeof mermaid !== 'undefined') {
-            mermaid.initialize({
-              theme: savedTheme === 'dark' ? 'dark' : 'default',
-            })
-          }
+          applyTheme(savedTheme)
         }
 
         // システムの設定を確認
@@ -711,31 +765,61 @@ import '../styles/resume.css'
           window.matchMedia &&
           window.matchMedia('(prefers-color-scheme: dark)').matches
         ) {
-          body.setAttribute('data-theme', 'dark')
-          themeBtn.textContent = '☀️'
+          applyTheme('dark')
+        }
 
-          // Mermaidテーマの更新
-          if (typeof mermaid !== 'undefined') {
-            mermaid.initialize({ theme: 'dark' })
-          }
+        const savedLayout = localStorage.getItem('pdf-layout')
+        if (savedLayout === 'enabled') {
+          applyPdfLayout(true)
+        } else {
+          setPdfButtonState(false)
         }
 
         themeBtn.addEventListener('click', () => {
           const currentTheme = body.getAttribute('data-theme')
           const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
 
-          body.setAttribute('data-theme', newTheme)
-          themeBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙'
+          applyTheme(newTheme)
 
           // ローカルストレージに保存
           localStorage.setItem('theme', newTheme)
 
           // Mermaidテーマの更新
-          if (typeof mermaid !== 'undefined') {
-            mermaid.initialize({
-              theme: newTheme === 'dark' ? 'dark' : 'default',
-            })
+          updateMermaidTheme()
+        })
+
+        if (pdfBtn) {
+          pdfBtn.addEventListener('click', () => {
+            const isPdfLayout = body.getAttribute('data-layout') === 'pdf'
+            const nextState = !isPdfLayout
+
+            applyPdfLayout(nextState)
+            localStorage.setItem(
+              'pdf-layout',
+              nextState ? 'enabled' : 'disabled',
+            )
+            updateMermaidTheme()
+          })
+        } else {
+          console.error('PDF button not found')
+        }
+
+        window.addEventListener('beforeprint', () => {
+          if (body.getAttribute('data-layout') !== 'pdf') {
+            applyPdfLayout(true)
+            printLayoutForced = true
           }
+
+          updateMermaidTheme()
+        })
+
+        window.addEventListener('afterprint', () => {
+          if (printLayoutForced) {
+            applyPdfLayout(false)
+            printLayoutForced = false
+          }
+
+          updateMermaidTheme()
         })
       })()
     </script>
