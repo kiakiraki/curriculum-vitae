@@ -1,0 +1,28 @@
+---
+import type { CVCareerItem } from '../../types/cv-data'
+
+interface Props {
+  data: CVCareerItem[]
+}
+
+const { data } = Astro.props
+---
+
+<section class="career">
+  <h2>職歴</h2>
+  <div class="career-list">
+    {
+      data.map((item) => (
+        <div class="career-item">
+          <div class="period">{item.period}</div>
+          <div class="company">{item.company}</div>
+          <ul class="career-details">
+            {item.details.map((detail) => (
+              <li>{detail}</li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</section>

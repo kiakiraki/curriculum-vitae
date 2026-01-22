@@ -1,0 +1,27 @@
+---
+import '../styles/editor.css'
+import { EditorApp } from '../components/editor/EditorApp'
+
+// 本番環境ではリダイレクト
+if (import.meta.env.PROD) {
+  return Astro.redirect('/')
+}
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CV エディタ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <EditorApp client:only="preact" />
+  </body>
+</html>

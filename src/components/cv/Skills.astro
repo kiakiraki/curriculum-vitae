@@ -1,0 +1,36 @@
+---
+import type { CVSkillCategory } from '../../types/cv-data'
+
+interface Props {
+  data: CVSkillCategory[]
+}
+
+const { data } = Astro.props
+---
+
+<section class="skills">
+  <h2>スキル</h2>
+
+  {
+    data.map((skill) => (
+      <div class="skill-category">
+        <h3>{skill.category}</h3>
+        {skill.description && (
+          <Fragment>
+            {skill.description
+              .trim()
+              .split('\n\n')
+              .map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+          </Fragment>
+        )}
+        <div class="tech-list">
+          {skill.tags.map((tag) => (
+            <span class="tech-tag">{tag}</span>
+          ))}
+        </div>
+      </div>
+    ))
+  }
+</section>

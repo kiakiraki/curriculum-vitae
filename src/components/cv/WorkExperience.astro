@@ -1,0 +1,76 @@
+---
+import type { CVWorkExperience } from '../../types/cv-data'
+
+interface Props {
+  data: CVWorkExperience[]
+}
+
+const { data } = Astro.props
+---
+
+<section class="work-experience">
+  <h2>職務経験詳細</h2>
+
+  {
+    data.map((company) => (
+      <div class="experience-block">
+        <h3>
+          {company.company} ({company.period})
+        </h3>
+
+        {company.projects.map((project) => (
+          <div class="project">
+            <h4>
+              {project.title}
+              {project.period && ` (${project.period})`}
+            </h4>
+            {project.description
+              .trim()
+              .split('\n')
+              .filter((line) => line.trim())
+              .map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+            {project.highlights.length > 0 && (
+              <ul>
+                {project.highlights.map((highlight) => (
+                  <li>{highlight}</li>
+                ))}
+              </ul>
+            )}
+            {project.references.length > 0 && (
+              <Fragment>
+                <p>
+                  <strong>参考:</strong>
+                  {project.references.length === 1 && (
+                    <a href={project.references[0].url} target="_blank">
+                      {project.references[0].label}
+                    </a>
+                  )}
+                </p>
+                {project.references.length > 1 && (
+                  <ul>
+                    {project.references.map((ref) => (
+                      <li>
+                        <a href={ref.url} target="_blank">
+                          {ref.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </Fragment>
+            )}
+            {project.tags.length > 0 && (
+              <div class="tech-list">
+                {project.tags.map((tag) => (
+                  <span class="tech-tag">{tag}</span>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    ))
+  }
+</section>
