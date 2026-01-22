@@ -15,10 +15,10 @@ basicInfo:
       displayText: kiakiraki
     - label: Twitter
       url: https://twitter.com/__kiakiraki__
-      displayText: "@__kiakiraki__"
+      displayText: '@__kiakiraki__'
     - label: mixi2
       url: https://mixi.social/@kiakiraki
-      displayText: "@kiakiraki"
+      displayText: '@kiakiraki'
     - label: Qiita
       url: https://qiita.com/kiakiraki
       displayText: kiakiraki
@@ -289,7 +289,7 @@ ossContributions:
       - title: Add Bundler support and timeout configuration for Ruby projects
         url: https://github.com/oraios/serena/pull/419
         number: 419
-      - title: "Enhance Solargraph integration: Rails detection, exclude patterns, and error handling"
+      - title: 'Enhance Solargraph integration: Rails detection, exclude patterns, and error handling'
         url: https://github.com/oraios/serena/pull/439
         number: 439
       - title: Add Ruby dual language server support with ruby-lsp as primary and Solargraph as experimental
