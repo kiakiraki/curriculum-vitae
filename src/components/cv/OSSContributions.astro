@@ -1,0 +1,37 @@
+---
+import type { CVOSSContribution } from '../../types/cv-data'
+
+interface Props {
+  data: CVOSSContribution[]
+}
+
+const { data } = Astro.props
+---
+
+<section class="oss-contributions">
+  <h2>OSSコントリビューション</h2>
+  {
+    data.map((contrib) => (
+      <div class="contribution-block">
+        <h3>{contrib.project}</h3>
+        {contrib.description
+          .trim()
+          .split('\n')
+          .filter((line) => line.trim())
+          .map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        <ul>
+          {contrib.pullRequests.map((pr) => (
+            <li>
+              <strong>{pr.title}:</strong>
+              <a href={pr.url} target="_blank">
+                PR #{pr.number}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</section>

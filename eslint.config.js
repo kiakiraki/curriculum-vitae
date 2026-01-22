@@ -1,16 +1,27 @@
 import eslintPluginAstro from 'eslint-plugin-astro'
+import tseslint from 'typescript-eslint'
 
 export default [
   {
-    ignores: ['.astro/**/*'],
+    ignores: ['.astro/**/*', 'dist/**/*', 'node_modules/**/*'],
   },
-  // add more generic rule sets here, such as:
-  // js.configs.recommended,
+  ...tseslint.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
   {
+    files: ['**/*.ts', '**/*.tsx'],
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        project: null,
+      },
+    },
+  },
+  {
     rules: {
-      // override/add rules settings here, such as:
-      // "no-unused-vars": "warn"
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { argsIgnorePattern: '^_' },
+      ],
     },
   },
 ]

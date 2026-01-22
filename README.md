@@ -9,6 +9,8 @@ https://curriculum_vitae.kiakiraki.dev/
 ## 🛠️ 技術スタック
 
 - **フレームワーク**: [Astro](https://astro.build/)
+- **UIコンポーネント**: [Preact](https://preactjs.com/) (エディタUI)
+- **データ形式**: YAML (CVコンテンツ管理)
 - **コード品質**: [ESLint](https://eslint.org/), [Prettier](https://prettier.io/)
 - **スタイリング**: CSS Variables + レスポンシブデザイン
 - **フォント**: Google Fonts (Noto Sans JP), [Font Awesome](https://fontawesome.com/)
@@ -54,10 +56,21 @@ cv-website/
 │   │   └── all.min.css         # Font Awesome スタイルシート
 │   └── webfonts/               # Font Awesome フォント
 ├── src/
+│   ├── components/
+│   │   ├── cv/                 # CV表示用Astroコンポーネント
+│   │   └── editor/             # エディタ用Preactコンポーネント
+│   ├── data/
+│   │   └── cv-data.yaml        # CVコンテンツデータ (Single Source of Truth)
 │   ├── pages/
-│   │   └── index.astro         # メインページ
-│   └── styles/
-│       └── resume.css          # スタイルシート
+│   │   ├── index.astro         # メインページ
+│   │   └── editor.astro        # エディタページ (開発環境のみ)
+│   ├── styles/
+│   │   ├── resume.css          # CVスタイルシート
+│   │   └── editor.css          # エディタスタイルシート
+│   └── types/
+│       └── cv-data.ts          # CVデータの型定義
+├── vite-plugins/
+│   └── cv-editor-api.js        # エディタAPI (開発環境のみ)
 ├── .gitignore
 ├── .prettierrc.json            # Prettier設定ファイル
 ├── astro.config.mjs            # Astro設定ファイル
@@ -71,21 +84,52 @@ cv-website/
 
 ### 内容の更新
 
-職務経歴書の内容を更新する場合は、`src/pages/index.astro` ファイルのHTML部分を編集してください。
+職務経歴書の内容を更新するには、以下の2つの方法があります：
+
+#### 方法1: ビジュアルエディタを使用 (推奨)
+
+開発サーバーを起動し、ブラウザでエディタにアクセスします：
+
+```bash
+npm run dev
+# http://localhost:4321/editor にアクセス
+```
+
+フォームで編集すると、変更は自動的に `src/data/cv-data.yaml` に保存されます。
+
+#### 方法2: YAMLファイルを直接編集
+
+`src/data/cv-data.yaml` を直接編集することもできます：
+
+```yaml
+meta:
+  title: 鶴田 洸 - 職務経歴書
+  description: 鶴田洸の職務経歴書 - 機械学習エンジニア/バックエンドエンジニア
+  updateDate: 2025/06現在
+
+basicInfo:
+  name:
+    ja: 鶴田 洸
+    en: Akira TSURUDA
+  links:
+    - label: GitHub
+      url: https://github.com/kiakiraki
+      displayText: kiakiraki
+    # ...
+```
 
 ### ネットワーク構成図の編集
 
-ホームネットワーク構成図は [Mermaid.js](https://mermaid.js.org/) を使用して実装されています。編集する場合は `src/pages/index.astro` ファイル内の以下のセクションを修正してください：
+ホームネットワーク構成図は [Mermaid.js](https://mermaid.js.org/) を使用して実装されています。`src/data/cv-data.yaml` 内の `networkDiagram.mermaidCode` を編集してください：
 
-```html
-<section class="network-diagram">
-  <h2>ホームネットワーク構成</h2>
-  <div class="mermaid">
-    graph TD Router["<i class="fas fa-wifi"></i> NEC Aterm WX11000T12"] -->
-    Switch["<i class="fas fa-network-wired"></i> NETGEAR XS505M"]
-    <!-- ... -->
-  </div>
-</section>
+```yaml
+networkDiagram:
+  mermaidCode: |
+    graph TD
+    Router["<i class='fas fa-wifi'></i> NEC Aterm WX11000T12"]
+    Switch["<i class='fas fa-network-wired'></i> NETGEAR XS505M"]
+    Router --> Switch
+    ...
 ```
 
 Font Awesome のアイコンを使用して各デバイスを視覚的に識別しやすくしています。
@@ -108,6 +152,17 @@ Font Awesome のアイコンを使用して各デバイスを視覚的に識別�
   /* ... */
 }
 ```
+
+## 📝 エディタについて
+
+ビジュアルエディタは開発環境でのみ利用可能です。本番ビルドでは `/editor` にアクセスすると自動的にトップページにリダイレクトされます。
+
+エディタの主な機能：
+
+- セクション別のフォーム編集
+- タグ入力 (技術スタック等)
+- 配列項目の追加・削除・並び替え
+- 自動保存 (1秒のデバウンス)
 
 ---
 

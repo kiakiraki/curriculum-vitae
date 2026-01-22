@@ -1,0 +1,16 @@
+---
+import type { CVNetworkDiagram } from '../../types/cv-data'
+
+interface Props {
+  data: CVNetworkDiagram
+}
+
+const { data } = Astro.props
+---
+
+<section class="network-diagram">
+  <h2>ホームネットワーク構成</h2>
+  <div class="mermaid">
+    {data.mermaidCode}
+  </div>
+</section>

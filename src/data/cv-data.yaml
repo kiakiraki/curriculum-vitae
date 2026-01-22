@@ -1,0 +1,334 @@
+meta:
+  title: 鶴田 洸 - 職務経歴書
+  description: 鶴田洸の職務経歴書 - 機械学習エンジニア/バックエンドエンジニア
+  updateDate: 2025/06現在
+basicInfo:
+  name:
+    ja: 鶴田 洸
+    en: Akira TSURUDA
+  links:
+    - label: LAPRAS
+      url: https://lapras.com/public/I8IXHAC
+      displayText: lapras.com/public/I8IXHAC
+    - label: GitHub
+      url: https://github.com/kiakiraki
+      displayText: kiakiraki
+    - label: Twitter
+      url: https://twitter.com/__kiakiraki__
+      displayText: '@__kiakiraki__'
+    - label: mixi2
+      url: https://mixi.social/@kiakiraki
+      displayText: '@kiakiraki'
+    - label: Qiita
+      url: https://qiita.com/kiakiraki
+      displayText: kiakiraki
+    - label: Zenn
+      url: https://zenn.dev/kiakiraki
+      displayText: kiakiraki
+    - label: LinkedIn
+      url: https://www.linkedin.com/in/akira-tsuruda-aa1316156/
+      displayText: Akira TSURUDA
+    - label: Connpass
+      url: https://connpass.com/user/kiakiraki/
+      displayText: あきらき
+career:
+  - period: 2021/03〜
+    company: 株式会社MIXI
+    details:
+      - みてね事業本部 機械学習エンジニア / バックエンドエンジニア
+  - period: 2020/03〜2021/02
+    company: 株式会社AIメディカルサービス
+    details:
+      - 研究開発部門 AIモデルチーム AIエンジニア (兼 インフラ/バックエンド)
+  - period: 2018/08～2020/02
+    company: 株式会社スカイディスク
+    details:
+      - AIエンジニアリング本部 シニアAIエンジニア
+      - 2019/10～ 事業推進本部 AIエンジニアリング部 兼 クラウドシステム部 シニアAIエンジニア
+  - period: 2014/04～2018/08
+    company: 富士通株式会社
+    details:
+      - ～2016/07 仮想化ソフトウェア技術統括部
+      - 2016/07～2018/08 AIプラットフォーム事業部
+skills:
+  - category: Machine Learning / Deep Learning
+    description: |
+      業務で約7年、顧客データを用いた PoC やシステム開発を実施。AIメディカルサービスでは、医療系の画像データ (内視鏡画像) を用いた画像認識モデルの研究開発、及び医療機関との共同研究を実施。
+
+      主な対象は、画像データ、センサデータ(数値/時系列データ)など。顧客対応 (業務課題のヒアリング等) からモデルの作成、顧客システム開発までを含む、幅広い範囲を担当。
+
+      最近はMLOps基盤の整備に興味があり、MLFlowを用いた開発環境・実験管理基盤の構築、Kubeflowを用いた基盤の利用経験あり。
+    tags:
+      - Python
+      - Flask
+      - Keras
+      - TensorFlow
+      - PyTorch
+      - BVLC Caffe
+      - scikit-learn
+      - Pandas
+      - OpenCV
+      - Pillow
+      - MLFlow
+      - Kubeflow
+      - BigQuery
+  - category: Backend
+    description: |
+      業務で約3年、Ruby on Railsを用いたWebサービス開発を実施。MIXIでは、最大2000万ユーザ規模のWebサービスの開発・運用を実施した。
+
+      その他、Python / Flaskを用いた開発経験などもあり。
+    tags:
+      - Ruby
+      - Ruby on Rails
+      - Sidekiq
+      - Python
+      - Flask
+  - category: Windows Application
+    description: |
+      業務で約2年間、ミドルウェア製品 (システムバックアップソフトウェア) の開発を実施
+    tags:
+      - C#
+      - .NET Framework
+      - Windows ADK
+  - category: 仮想化基盤/ハイパーバイザ
+    description: |
+      製品開発の中で、VMware vShpere 等の仮想化基盤を用いた環境構築/API による制御を実施
+    tags:
+      - VMware vSphere/ESXi
+      - vCenter
+      - VMware vSphere Web Services SDK
+      - Virtual Disk Development Kit (VDDK)
+  - category: Network
+    description: |
+      学生時代、ネットワークプロトコル (特に無線LAN、Ethernet) 関連の研究を実施
+    tags:
+      - WireShark
+      - QualNet
+  - category: その他
+    description: null
+    tags:
+      - Docker
+      - nvidia-docker
+      - docker-compose
+      - Kubernetes
+      - Arduino/RasPi
+      - C/C++
+      - ShellScript(Bash)
+      - VBScript
+aiTools:
+  work:
+    - GitHub Copilot
+    - Claude Code
+    - Codex CLI
+    - Devin
+  private:
+    - Gemini CLI
+    - Jules
+    - Codex
+    - Antigravity
+strengths:
+  - 2000万人規模の大規模Webサービスにおける開発経験 (機械学習/バックエンド)
+  - toBの機械学習案件において、顧客対応(問題定義)/データ分析/モデル作成/システム構築を一貫して実施した経験
+  - 実際の顧客データ (特に、「汚い」「量の少ない」データ) を利用した機械学習モデル (特に Deep Learning) の作成経験
+  - 内視鏡画像等、特殊な機材で撮影した画像データの利用経験
+  - 産業データや医療データ等、顧客のドメイン知識を要する案件の対応経験
+  - ネットワークに対するプロトコルレベルの理解
+  - 幅広い分野に手を出すマインド (技術的探究心)、未経験の分野で結果を出す適応力
+  - エンジニアの文化づくり (社内LT会の立ち上げ、「分報(times)」文化の推進、社内ハッカソン運営)
+  - 業務改善への提言、各種業務ツールの積極的な導入
+workExperience:
+  - company: 富士通株式会社
+    period: 2014/04～2018/08
+    projects:
+      - title: システムバックアップソフトウェアの開発
+        period: 2014/11～2016/06
+        description: |
+          富士通製システムバックアップソフトウェア SystemcastWizard Professional/Datacloing Wizard の開発、及びリリース後のサポート業務を実施。特に、VMware vSphere 仮想化環境対応を主担当として実施。
+        highlights:
+          - 仮想マシンのバックアップ/構成復元を数クリックで実現する機能を開発
+          - 業界初の Raw Disk Mapping (RDM) 対応を実現
+          - 部内に有識者がいない状況、かつ自身もまったく経験がない分野だったが、地道な実機調査で納期内の開発を達成
+        references:
+          - label: FUJITSU Software SystemcastWizard Professional V6.0 強化ポイント
+            url: http://www.fujitsu.com/jp/products/software/infrastructure-software/infrastructure-software/scw/enhancement/scw-60.html
+          - label: FUJITSU Software DatacloningWizard for Server V6.0 強化ポイント
+            url: http://www.fujitsu.com/jp/products/software/infrastructure-software/infrastructure-software/dcw/enhancement/dcw-sv-60.html
+        tags:
+          - C# (.NET Framework)
+          - Windows ADK
+          - VMware vSphere Web Services SDK
+          - VMware Virtual Disk Development Kit
+      - title: Deep Learning 技術を用いた REST API の開発
+        period: 2016/11～2017/03
+        description: |
+          「Zinrai プラットフォームサービス」にて提供するサービスのうち、画像系 REST API の開発に参加。一般画像分類、シーン分類、物体検出など。
+        highlights:
+          - Python/Flask を用いた REST API の仕様策定、教師データの作成、及びモデルの学習を担当
+          - 当時の最新手法の導入、教師データ収集/アノテーションツールの作成により、他社と遜色ない性能を実現
+        references:
+          - label: Zinrai プラットフォームサービス
+            url: http://www.fujitsu.com/jp/solutions/business-technology/ai/ai-zinrai/services/platform/
+        tags:
+          - Python
+          - Flask
+          - BVLC Caffe
+          - Nvidia Docker
+      - title: Deep Learning 技術のコンサルティング、PoC、及び顧客システム開発
+        period: 2016/07～
+        description: |
+          お客様業務のヒアリングから機械学習モデルの作成、場合によっては顧客システムの開発まで一貫して実施。「とりあえず業務の改善がしたい」「流行の Deep Learning 技術をなにか業務に取り入れたい」といった曖昧な案件も経験。
+        highlights: []
+        references:
+          - label: 道路陥没を防ぐ川崎地質の路面下空洞探査に富士通の AI 技術を活用
+            url: http://pr.fujitsu.com/jp/news/2017/05/15-2.html
+          - label: Zinrai導入支援／構築／運用サービス
+            url: http://www.fujitsu.com/jp/solutions/business-technology/ai/ai-zinrai/services/integration/
+        tags:
+          - Python
+          - TensorFlow
+          - Keras
+          - OpenCV
+  - company: 株式会社スカイディスク
+    period: 2018/08～2020/02
+    projects:
+      - title: Deep Learning技術を活用した外観検査装置の開発
+        period: 2018/08～2018/11
+        description: |
+          Deep Learningによる画像認識技術を応用した、工場ライン向け外観検査装置を開発。撮影方法を工夫し、カメラ1台のみで様々な異常の検出に対応。
+        highlights: []
+        references:
+          - label: AI外観検査機をIoT/M2M展秋で初披露
+            url: https://skydisc.jp/information/1265/
+        tags:
+          - Python
+          - TensorFlow
+          - Keras
+          - OpenCV
+          - Flask
+      - title: 機械学習技術のコンサルティング、PoC、及び顧客システム開発
+        period: 2018/08～2020/02
+        description: |
+          お客様業務のヒアリングから機械学習モデルの作成、顧客システムの開発まで一貫して実施。主に製造業を対象として、顧客ドメイン知識の理解を要する案件を多数経験。
+        highlights: []
+        references:
+          - label: SkyAI
+            url: https://skydisc.jp/service/sky_ai/
+        tags: []
+  - company: 株式会社AIメディカルサービス
+    period: 2020/02～2021/02
+    projects:
+      - title: Deep Learning技術を用いた内視鏡 AI 製品の研究開発
+        period: null
+        description: |
+          内視鏡画像から病変を検出する AI モデルの開発を担当。特殊なカメラの特性や医療機関毎のバイアスを意識した画像処理・モデル開発を実施。
+        highlights:
+          - データ管理 / アノテーションツール
+          - 医師の判別スキルを測定するツールの開発 (薬機申請支援)
+        references:
+          - label: 早期胃がんに特化したAI搭載の内視鏡画像診断支援ソフトウェアを発売
+            url: https://www.ai-ms.com/news/product/20240304
+        tags:
+          - Python
+          - PyTorch
+          - OpenCV
+          - ffmpeg
+          - Flask
+          - Pandas
+          - Google Compute Engine
+      - title: 医療機関との共同研究
+        period: null
+        description: |
+          内視鏡を扱う医療機関と共同で、論文発表及び将来の製品開発に向けた共同研究を実施中。他社では実績がない領域での、難易度の高いモデル作成を行う。
+        highlights: []
+        references:
+          - label: ACHIEVEMENTS | INFORMATION | AIメディカルサービス
+            url: https://www.ai-ms.com/information/?category=achievements&page=1
+        tags: []
+      - title: 開発基盤の構築・運用
+        period: null
+        description: |
+          モデル開発で利用するオンプレ開発基盤の構築及び運用を実施。DGX A100 を含むGPUサーバ (GPU約20台)、その他ストレージなど。製品で利用するモデルの継続的改善、開発環境管理、及び薬機申請に向けたエビデンス取得のため、MLOps 基盤 (MLflow) を導入。
+        highlights: []
+        references: []
+        tags:
+          - Ubuntu
+          - CentOS
+          - KVM
+          - Kubernetes
+          - NVIDIA Docker
+          - MLFlow
+  - company: 株式会社MIXI
+    period: 2021/03～現在
+    projects:
+      - title: 写真アルバムサービスにおける各種機械学習モデルの作成・運用
+        period: 2021/03～進行中
+        description: |
+          家族向け写真アルバムサービス「みてね」で運用されている各種機械学習モデル(顔検出器など)の改善や開発プロセスの整備、数年前から運用されている機械学習システムの技術的負債解消作業など。
+        highlights: []
+        references: []
+        tags:
+          - Python
+          - TensorFlow
+          - PyTorch
+      - title: 写真アルバムサービスのバックエンド開発
+        period: 2022/10～進行中
+        description: |
+          家族向け写真アルバムサービス「みてね」におけるバックエンド開発 (Ruby on Rails)。主に「1秒動画」機能や各種レコメンド機能など。
+        highlights: []
+        references: []
+        tags:
+          - Ruby
+          - Ruby on Rails
+          - Sidekiq
+          - FFmpeg
+ossContributions:
+  - project: Serena MCP Server
+    description: |
+      Serena MCP ServerのRuby対応を改善し、Ruby開発者により良い体験を提供するための機能拡張とバグ修正を実施。
+    pullRequests:
+      - title: Add Bundler support and timeout configuration for Ruby projects
+        url: https://github.com/oraios/serena/pull/419
+        number: 419
+      - title: 'Enhance Solargraph integration: Rails detection, exclude patterns, and error handling'
+        url: https://github.com/oraios/serena/pull/439
+        number: 439
+      - title: Add Ruby dual language server support with ruby-lsp as primary and Solargraph as experimental
+        url: https://github.com/oraios/serena/pull/540
+        number: 540
+      - title: Enhanced Ruby LSP progress handler to properly capture completion signals
+        url: https://github.com/oraios/serena/pull/569
+        number: 569
+networkDiagram:
+  mermaidCode: |
+    graph TD
+    Router["<i class='fas fa-wifi'></i> NEC Aterm WX11000T12"]
+    Switch["<i class='fas fa-network-wired'></i> NETGEAR XS505M"]
+    MainPC["<i class='fas fa-desktop'></i> メインPC<br/>Ryzen 9 5950X<br/>64GB RAM<br/>RTX4090"]
+    Storage["<i class='fas fa-hdd'></i> ストレージサーバ<br/>8TB HDD x6<br/>Windows Storage Spaces<br/>VPN on Tailscale"]
+    SwitchBot["<i class='fas fa-house-signal'></i> SwitchBot Hub mini"]
+    CO2["<i class='fas fa-wind'></i> SwitchBot CO2センサー"]
+    SmartPlug["<i class='fas fa-plug'></i> SwitchBot スマートプラグ"]
+    NatureRemo["<i class='fas fa-bolt'></i> Nature Remo E"]
+    SmartMeter["<i class='fas fa-chart-line'></i> スマートメーター"]
+
+    Router --> Switch
+    Switch --> MainPC
+    Switch --> Storage
+    Router --> SwitchBot
+    SwitchBot --> CO2
+    SwitchBot --> SmartPlug
+    Router --> NatureRemo
+    NatureRemo --> SmartMeter
+others:
+  - content: 社内ハッカソンの運営に参加 (富士通時代) - 「自転車向けナビゲーションシステム」のアイデアで1度優勝、その後運営側へ
+    reference:
+      label: 受託型SEを"共創人材"へ、ハッカソンを推進する富士通
+      url: http://tech.nikkeibp.co.jp/it/atcl/column/15/020200024/
+  - content: 社内LT会主催 (SKYDISC時代)
+    reference:
+      label: おやじベンチャーのここが良い「人に聞かせたくなる社内LT会」
+      url: https://www.wantedly.com/companies/skydisc/post_articles/175638
+  - content: フランス開催のロケット打ち上げ競技会 C'Space に参加 (学生時代) - 搭載する電子機器の配線や配置の設計、及び実装を担当
+    reference:
+      label: フランスの大会で学生ロケットを打ち上げました！
+      url: http://www.tobata.kyutech.ac.jp/node/945

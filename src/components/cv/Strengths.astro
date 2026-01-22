@@ -1,0 +1,14 @@
+---
+interface Props {
+  data: string[]
+}
+
+const { data } = Astro.props
+---
+
+<section class="strengths">
+  <h2>強み</h2>
+  <ul>
+    {data.map((strength) => <li>{strength}</li>)}
+  </ul>
+</section>

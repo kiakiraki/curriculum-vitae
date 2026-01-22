@@ -1,0 +1,29 @@
+---
+import type { CVBasicInfo } from '../../types/cv-data'
+
+interface Props {
+  data: CVBasicInfo
+}
+
+const { data } = Astro.props
+---
+
+<section class="basic-info">
+  <h2>基本情報</h2>
+  <div class="info-grid">
+    <div class="info-item">
+      <strong>氏名</strong>
+      <span>{data.name.ja} ({data.name.en})</span>
+    </div>
+    {
+      data.links.map((link) => (
+        <div class="info-item">
+          <strong>{link.label}</strong>
+          <a href={link.url} target="_blank">
+            {link.displayText}
+          </a>
+        </div>
+      ))
+    }
+  </div>
+</section>

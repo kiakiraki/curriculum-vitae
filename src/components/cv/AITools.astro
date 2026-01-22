@@ -1,0 +1,27 @@
+---
+import type { CVAITools } from '../../types/cv-data'
+
+interface Props {
+  data: CVAITools
+}
+
+const { data } = Astro.props
+---
+
+<section class="ai-tools">
+  <h2>AIツール利用状況</h2>
+
+  <div class="skill-category">
+    <h3>業務で利用しているもの</h3>
+    <div class="tech-list">
+      {data.work.map((tool) => <span class="tech-tag">{tool}</span>)}
+    </div>
+  </div>
+
+  <div class="skill-category">
+    <h3>プライベートで利用しているもの</h3>
+    <div class="tech-list">
+      {data.private.map((tool) => <span class="tech-tag">{tool}</span>)}
+    </div>
+  </div>
+</section>
