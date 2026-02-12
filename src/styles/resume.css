@@ -248,14 +248,26 @@ h4 {
 }
 
 .strengths ul,
+.ai-analysis ul,
 .others ul {
   margin-left: 20px;
 }
 
 .strengths li,
+.ai-analysis li,
 .others li {
   margin-bottom: 10px;
   color: var(--secondary-text);
+}
+
+.ai-analysis-description {
+  font-size: 0.85rem;
+  color: var(--secondary-text);
+  margin-bottom: 20px;
+}
+
+.ai-analysis h3 {
+  margin-top: 20px;
 }
 
 .experience-block {
@@ -543,6 +555,7 @@ body[data-layout='pdf'] .oss-contributions .contribution-block {
   .career,
   .ai-tools,
   .strengths,
+  .ai-analysis,
   .oss-contributions,
   .network-diagram,
   .others {
