@@ -1,0 +1,26 @@
+---
+import type { CVAIAnalysis } from '../../types/cv-data'
+
+interface Props {
+  data: CVAIAnalysis
+}
+
+const { data } = Astro.props
+---
+
+<section class="ai-analysis">
+  <h2>AIとの対話から見える人物特性</h2>
+  <p class="ai-analysis-description">{data.description}</p>
+  {
+    data.categories.map((category) => (
+      <div>
+        <h3>{category.title}</h3>
+        <ul>
+          {category.items.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</section>

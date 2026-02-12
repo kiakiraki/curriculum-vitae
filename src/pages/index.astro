@@ -9,6 +9,7 @@ import Career from '../components/cv/Career.astro'
 import Skills from '../components/cv/Skills.astro'
 import AITools from '../components/cv/AITools.astro'
 import Strengths from '../components/cv/Strengths.astro'
+import AIAnalysis from '../components/cv/AIAnalysis.astro'
 import WorkExperience from '../components/cv/WorkExperience.astro'
 import OSSContributions from '../components/cv/OSSContributions.astro'
 import NetworkDiagram from '../components/cv/NetworkDiagram.astro'
@@ -68,6 +69,7 @@ const cvData = yaml.load(yamlContent) as CVData
       <Skills data={cvData.skills} />
       <AITools data={cvData.aiTools} />
       <Strengths data={cvData.strengths} />
+      <AIAnalysis data={cvData.aiAnalysis} />
       <WorkExperience data={cvData.workExperience} />
       <OSSContributions data={cvData.ossContributions} />
       <NetworkDiagram data={cvData.networkDiagram} />
