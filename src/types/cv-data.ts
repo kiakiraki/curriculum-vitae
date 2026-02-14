@@ -74,6 +74,20 @@ export interface CVOSSContribution {
   pullRequests: CVPullRequest[]
 }
 
+export interface CVPersonalProjectReference {
+  label: string
+  url: string
+}
+
+export interface CVPersonalProject {
+  title: string
+  status: string
+  description: string
+  highlights: string[]
+  references: CVPersonalProjectReference[]
+  tags: string[]
+}
+
 export interface CVNetworkDiagram {
   mermaidCode: string
 }
@@ -103,6 +117,7 @@ export interface CVData {
   aiAnalysis: CVAIAnalysis
   workExperience: CVWorkExperience[]
   ossContributions: CVOSSContribution[]
+  personalProjects: CVPersonalProject[]
   networkDiagram: CVNetworkDiagram
   others: CVOtherItem[]
 }

@@ -9,6 +9,7 @@ import { AIToolsEditor } from './sections/AIToolsEditor'
 import { StrengthsEditor } from './sections/StrengthsEditor'
 import { WorkExperienceEditor } from './sections/WorkExperienceEditor'
 import { OSSContributionsEditor } from './sections/OSSContributionsEditor'
+import { PersonalProjectsEditor } from './sections/PersonalProjectsEditor'
 import { NetworkDiagramEditor } from './sections/NetworkDiagramEditor'
 import { OthersEditor } from './sections/OthersEditor'
 
@@ -137,6 +138,15 @@ export function EditorApp() {
             data={data.ossContributions}
             onChange={(ossContributions) =>
               updateData('ossContributions', ossContributions)
+            }
+          />
+        )
+      case 'personalProjects':
+        return (
+          <PersonalProjectsEditor
+            data={data.personalProjects}
+            onChange={(personalProjects) =>
+              updateData('personalProjects', personalProjects)
             }
           />
         )

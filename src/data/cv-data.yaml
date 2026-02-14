@@ -1,7 +1,7 @@
 meta:
   title: 鶴田 洸 - 職務経歴書
   description: 鶴田洸の職務経歴書 - 機械学習エンジニア/バックエンドエンジニア
-  updateDate: 2025/06現在
+  updateDate: 2026/02現在
 basicInfo:
   name:
     ja: 鶴田 洸
@@ -318,6 +318,65 @@ ossContributions:
       - title: Enhanced Ruby LSP progress handler to properly capture completion signals
         url: https://github.com/oraios/serena/pull/569
         number: 569
+personalProjects:
+  - title: 個人ヘルスケアデータ基盤
+    status: 運用中
+    description: |
+      体組成計・血圧計・歩数・睡眠 (Android Health Connect)、CPAP装置、血液検査、食事記録、室内環境 (CO2・温湿度) など、複数のデータソースから健康データを収集・蓄積し、AIが解釈・レポート化する個人向けデータ基盤。
+
+      バックエンドは Cloudflare Workers + D1 で構築し、無料枠内で運用。自作Androidアプリで Health Connect からデータを取得し API 経由で蓄積する。Claude Skills として5つのスキル定義 (health-sync / nutrition-tracker / health-report / switchbot-env / location-sync) を作成し、日常会話の中で食事報告やCPAPデータの記録、栄養バランス分析、通院用レポートの自動生成などを実現した。
+
+      設計方針として「継続性 > 正確性」を重視し、食事報告は30秒、CPAPログは1行で記録できるフリクションの低さを優先している。Grafana によるダッシュボード可視化も構築。
+    highlights:
+      - Cloudflare Workers + D1 による複数 API の設計・実装・運用 (health-sync / location-sync)
+      - Claude Skills を「AIが読める運用マニュアル」として設計し、API仕様 + ドメイン知識を統合
+      - 自作 Android アプリによる Health Connect データ収集
+      - 通院用レポートの自動生成 (React JSX → モノクロ印刷最適化)
+      - SwitchBot API → Cron Trigger による環境データの定期収集・蓄積
+    references:
+      - label: 'Zenn: AIに外部記憶を持たせたら何が変わったか ── RAGとは違う、個人のためのread/write記憶基盤'
+        url: https://zenn.dev/kiakiraki/articles/f09778997fd609
+      - label: 'Zenn: 健康データを全部AIに渡したら通院が変わった ── Claude Skills × Cloudflareの個人ヘルスケア基盤'
+        url: https://zenn.dev/kiakiraki/articles/74cf649fe627ce
+      - label: 'Zenn: 自分の位置情報をClaudeに渡して行動を追跡してもらう'
+        url: https://zenn.dev/kiakiraki/articles/812c6cf8bfa89d
+      - label: GitHub (health-sync-api)
+        url: https://github.com/kiakiraki/health-sync-api
+    tags:
+      - TypeScript
+      - Cloudflare Workers
+      - Cloudflare D1
+      - Hono
+      - Android (Kotlin)
+      - Health Connect
+      - Claude Skills
+      - Grafana
+      - SwitchBot API
+      - React
+  - title: セルフホスト画像検索システム (計画中)
+    status: 設計・プロトタイプ
+    description: |
+      個人で撮影した約10万枚の写真 (競馬・航空機・その他) に対して、Google Photos 風の自然言語検索を自前で実現するシステムの設計・プロトタイピング。
+
+      Vision-Language Model (Qwen3-VL-30B-A3B) によるキャプション生成・OCRと、SigLIP によるベクトル埋め込みを組み合わせ、SQLite FTS5 (trigram tokenizer) と sqlite-vec によるハイブリッド検索を実現する構成。RTX4090 上で VLM のバッチ推論を行い、ストレージサーバ上の SQLite で検索を提供する。
+
+      VLM の OCR 精度検証として、競馬写真のゼッケン文字読み取りテストを実施。部分的な誤認識に対しては trigram tokenizer によるファジーマッチで救済する設計とし、PaddleOCR 等の追加 OCR パイプラインを不要にした。
+    highlights:
+      - VLM (Qwen3-VL-30B-A3B) の量子化モデルによるキャプション + OCR の統合パイプライン設計
+      - SigLIP embedding + sqlite-vec によるセマンティック検索
+      - SQLite FTS5 trigram tokenizer による日本語ファジーテキスト検索
+      - 競馬写真でのOCR精度検証と、ドメイン固有名詞の辞書ファジーマッチ補正の設計
+    references: []
+    tags:
+      - Python
+      - Qwen3-VL
+      - SigLIP
+      - SQLite
+      - sqlite-vec
+      - FTS5
+      - Ollama
+      - FastAPI
+      - React
 networkDiagram:
   mermaidCode: |
     graph TD

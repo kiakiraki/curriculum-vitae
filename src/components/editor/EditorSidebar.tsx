@@ -7,6 +7,7 @@ export type Section =
   | 'strengths'
   | 'workExperience'
   | 'ossContributions'
+  | 'personalProjects'
   | 'networkDiagram'
   | 'others'
 
@@ -24,6 +25,7 @@ const sections: { id: Section; label: string }[] = [
   { id: 'strengths', label: '強み' },
   { id: 'workExperience', label: '職務経験詳細' },
   { id: 'ossContributions', label: 'OSS貢献' },
+  { id: 'personalProjects', label: '個人開発' },
   { id: 'networkDiagram', label: 'ネットワーク図' },
   { id: 'others', label: 'その他' },
 ]
