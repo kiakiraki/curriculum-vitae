@@ -295,6 +295,18 @@ h4 {
   color: var(--secondary-text);
 }
 
+.project-status {
+  display: inline-block;
+  font-size: 0.75em;
+  font-weight: 500;
+  padding: 2px 10px;
+  margin-left: 10px;
+  border-radius: 12px;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  vertical-align: middle;
+}
+
 body[data-layout='pdf'] {
   --bg-color: #ffffff;
   --text-color: #111111;

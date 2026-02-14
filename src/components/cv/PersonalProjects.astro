@@ -1,0 +1,61 @@
+---
+import type { CVPersonalProject } from '../../types/cv-data'
+
+interface Props {
+  data: CVPersonalProject[]
+}
+
+const { data } = Astro.props
+---
+
+<section class="personal-projects">
+  <h2>個人開発</h2>
+
+  {
+    data.map((project) => (
+      <div class="project">
+        <h4>
+          {project.title}
+          <span class="project-status">{project.status}</span>
+        </h4>
+        {project.description
+          .trim()
+          .split('\n')
+          .filter((line) => line.trim())
+          .map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        {project.highlights.length > 0 && (
+          <ul>
+            {project.highlights.map((highlight) => (
+              <li>{highlight}</li>
+            ))}
+          </ul>
+        )}
+        {project.references.length > 0 && (
+          <Fragment>
+            <p>
+              <strong>参考:</strong>
+            </p>
+            <ul>
+              {project.references.map((ref) => (
+                <li>
+                  <a href={ref.url} target="_blank">
+                    {ref.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </Fragment>
+        )}
+        {project.tags.length > 0 && (
+          <div class="tech-list">
+            {project.tags.map((tag) => (
+              <span class="tech-tag">{tag}</span>
+            ))}
+          </div>
+        )}
+      </div>
+    ))
+  }
+</section>
