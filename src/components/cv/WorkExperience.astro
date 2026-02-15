@@ -43,7 +43,11 @@ const { data } = Astro.props
                 <p>
                   <strong>参考:</strong>
                   {project.references.length === 1 && (
-                    <a href={project.references[0].url} target="_blank">
+                    <a
+                      href={project.references[0].url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       {project.references[0].label}
                     </a>
                   )}
@@ -52,7 +56,11 @@ const { data } = Astro.props
                   <ul>
                     {project.references.map((ref) => (
                       <li>
-                        <a href={ref.url} target="_blank">
+                        <a
+                          href={ref.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           {ref.label}
                         </a>
                       </li>
