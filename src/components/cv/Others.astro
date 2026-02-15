@@ -19,7 +19,11 @@ const { data } = Astro.props
             <Fragment>
               <br />
               <strong>参考:</strong>
-              <a href={item.reference.url} target="_blank">
+              <a
+                href={item.reference.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {item.reference.label}
               </a>
             </Fragment>

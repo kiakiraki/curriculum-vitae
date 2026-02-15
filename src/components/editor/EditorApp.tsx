@@ -29,7 +29,7 @@ export function EditorApp() {
       .catch((err) => setError(err.message))
   }, [])
 
-  // Debounced save
+  // Debounced save (保存エラーはステータス表示のみ、エディタは維持)
   const saveData = useCallback(async (newData: CVData) => {
     setSaveStatus('saving')
     try {
@@ -41,9 +41,8 @@ export function EditorApp() {
       if (!res.ok) throw new Error('Save failed')
       setSaveStatus('saved')
       setTimeout(() => setSaveStatus('idle'), 2000)
-    } catch (err) {
+    } catch {
       setSaveStatus('error')
-      setError((err as Error).message)
     }
   }, [])
 
@@ -54,6 +53,10 @@ export function EditorApp() {
       saveData(data)
     }, 1000)
     return () => clearTimeout(timer)
+  }, [data, saveData])
+
+  const retrySave = useCallback(() => {
+    if (data) saveData(data)
   }, [data, saveData])
 
   const updateData = <K extends keyof CVData>(key: K, value: CVData[K]) => {
@@ -187,7 +190,19 @@ export function EditorApp() {
             {saveStatus === 'idle' && ''}
             {saveStatus === 'saving' && '保存中...'}
             {saveStatus === 'saved' && '保存しました'}
-            {saveStatus === 'error' && '保存エラー'}
+            {saveStatus === 'error' && (
+              <>
+                保存エラー
+                <button
+                  type="button"
+                  class="btn btn-sm"
+                  onClick={retrySave}
+                  style={{ marginLeft: '8px' }}
+                >
+                  再試行
+                </button>
+              </>
+            )}
           </span>
         </div>
         <div class="editor-content">{renderSection()}</div>
