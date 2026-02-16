@@ -72,6 +72,7 @@ export function ArrayField<T>({
                 class="btn btn-sm"
                 onClick={() => handleMoveUp(index)}
                 disabled={index === 0}
+                aria-label={`${itemLabel} ${index + 1} を上に移動`}
               >
                 ↑
               </button>
@@ -80,6 +81,7 @@ export function ArrayField<T>({
                 class="btn btn-sm"
                 onClick={() => handleMoveDown(index)}
                 disabled={index === items.length - 1}
+                aria-label={`${itemLabel} ${index + 1} を下に移動`}
               >
                 ↓
               </button>
@@ -87,6 +89,7 @@ export function ArrayField<T>({
                 type="button"
                 class="btn btn-sm btn-danger"
                 onClick={() => handleRemove(index)}
+                aria-label={`${itemLabel} ${index + 1} を削除`}
               >
                 削除
               </button>
