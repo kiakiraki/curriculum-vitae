@@ -1,6 +1,6 @@
 # Curriculum-Vitae
 
-https://curriculum_vitae.kiakiraki.dev/
+https://curriculum-vitae.kiakiraki.dev/
 
 ## 概要
 

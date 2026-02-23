@@ -6,7 +6,7 @@ import { cvEditorApi } from './vite-plugins/cv-editor-api.js'
 // https://astro.build/config
 export default defineConfig({
   // カスタムドメインでホスティングする場合の設定
-  site: 'https://curriculum_vitae.kiakiraki.dev',
+  site: 'https://curriculum-vitae.kiakiraki.dev',
 
   base: '',
 
