@@ -4,7 +4,7 @@ https://curriculum-vitae.kiakiraki.dev/
 
 ## 概要
 
-これは、職務経歴書を静的Webページとして構成し、GitHub Pagesでホスティングし、カスタムドメインで公開するためのプロジェクトです。Astroフレームワークを使用し、高速な表示とシンプルな開発体験を目指しています。
+これは、職務経歴書を静的Webページとして構成し、Cloudflare Workersでホスティングし、カスタムドメインで公開するためのプロジェクトです。Astroフレームワークを使用し、高速な表示とシンプルな開発体験を目指しています。
 
 ## 🛠️ 技術スタック
 
@@ -15,7 +15,7 @@ https://curriculum-vitae.kiakiraki.dev/
 - **スタイリング**: CSS Variables + レスポンシブデザイン
 - **フォント**: Google Fonts (Noto Sans JP), [Font Awesome](https://fontawesome.com/)
 - **図表**: [Mermaid.js](https://mermaid.js.org/) - ネットワーク図やダイアグラムの作成
-- **ホスティング**: GitHub Pages
+- **ホスティング**: Cloudflare Workers (Static Assets)
 - **CI/CD**: GitHub Actions
 
 ## 📦 インストール
@@ -40,7 +40,7 @@ npm install
 
 ## 🏗️ ビルドとデプロイ
 
-`main`ブランチにpushすると、GitHub Actionsによって自動でビルドとデプロイが実行されます。
+`main`ブランチにpushすると、GitHub ActionsによってビルドされCloudflare Workersにデプロイされます。
 
 ## 📁 プロジェクト構成
 
@@ -49,7 +49,7 @@ cv-website/
 ├── .github/
 │   └── workflows/
 │       ├── ci.yml              # CI設定 (ビルド・テスト)
-│       └── deploy.yml          # GitHub Actionsによるデプロイ設定
+│       └── deploy.yml          # Cloudflare Workersへのデプロイ設定
 ├── public/
 │   ├── favicon.svg             # ファビコン
 │   ├── css/
@@ -73,6 +73,7 @@ cv-website/
 │   └── cv-editor-api.js        # エディタAPI (開発環境のみ)
 ├── .gitignore
 ├── .prettierrc.json            # Prettier設定ファイル
+├── wrangler.toml               # Cloudflare Workers設定ファイル
 ├── astro.config.mjs            # Astro設定ファイル
 ├── eslint.config.js            # ESLint設定ファイル
 ├── package.json

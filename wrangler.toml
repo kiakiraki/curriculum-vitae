@@ -1,0 +1,14 @@
+name = "curriculum-vitae"
+compatibility_date = "2026-02-23"
+workers_dev = true
+
+# カスタムドメイン設定
+[[routes]]
+pattern = "curriculum-vitae.kiakiraki.dev"
+custom_domain = true
+
+# 静的アセット設定
+[assets]
+directory = "./dist"
+html_handling = "auto-trailing-slash"
+not_found_handling = "404-page"
