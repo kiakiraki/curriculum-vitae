@@ -2,6 +2,10 @@ name = "curriculum-vitae"
 compatibility_date = "2026-02-23"
 workers_dev = true
 
+# ビルド設定 (Cloudflare Builds)
+[build]
+command = "npm install && npm run build"
+
 # カスタムドメイン設定
 [[routes]]
 pattern = "curriculum-vitae.kiakiraki.dev"
