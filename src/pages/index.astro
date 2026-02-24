@@ -33,7 +33,7 @@ const cvData = yaml.load(yamlContent) as CVData
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/all.min.css" />
@@ -41,24 +41,30 @@ const cvData = yaml.load(yamlContent) as CVData
   <body>
     <script is:inline>
       ;(function () {
-        const saved = localStorage.getItem('theme')
-        const theme =
-          saved ||
-          (window.matchMedia('(prefers-color-scheme: dark)').matches
+        const mode = localStorage.getItem('theme-mode') || 'auto'
+        let theme
+        if (mode === 'auto') {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches
             ? 'dark'
-            : 'light')
+            : 'light'
+        } else {
+          theme = mode
+        }
         document.body.setAttribute('data-theme', theme)
+        document.body.setAttribute('data-theme-mode', mode)
       })()
     </script>
+
+    <div class="orb-purple"></div>
 
     <div class="theme-toggle">
       <button
         id="theme-btn"
         class="toggle-btn"
         type="button"
-        aria-label="Toggle dark mode"
+        aria-label="Toggle theme"
       >
-        🌙
+        🖥️
       </button>
       <button
         id="pdf-btn"
@@ -180,9 +186,35 @@ const cvData = yaml.load(yamlContent) as CVData
           return
         }
 
-        // ボタンのテキストを現在のテーマに合わせる（テーマ自体はインラインスクリプトで設定済み）
-        themeBtn.textContent =
-          body.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙'
+        const ICONS = { auto: '🖥️', light: '☀️', dark: '🌙' }
+        const CYCLE = ['auto', 'light', 'dark']
+
+        const getSystemTheme = () =>
+          window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+
+        const applyTheme = (mode) => {
+          const theme = mode === 'auto' ? getSystemTheme() : mode
+          body.setAttribute('data-theme', theme)
+          body.setAttribute('data-theme-mode', mode)
+          themeBtn.textContent = ICONS[mode]
+        }
+
+        // 初期表示（インラインスクリプトで data-theme は設定済み）
+        const currentMode = body.getAttribute('data-theme-mode') || 'auto'
+        themeBtn.textContent = ICONS[currentMode]
+
+        // システム設定変更の監視（auto モード時に追従）
+        window
+          .matchMedia('(prefers-color-scheme: dark)')
+          .addEventListener('change', () => {
+            const mode = body.getAttribute('data-theme-mode')
+            if (mode === 'auto') {
+              applyTheme('auto')
+              reRenderMermaid()
+            }
+          })
 
         const setPdfButtonState = (enabled) => {
           if (!pdfBtn) return
@@ -207,12 +239,12 @@ const cvData = yaml.load(yamlContent) as CVData
         }
 
         themeBtn.addEventListener('click', () => {
-          const currentTheme = body.getAttribute('data-theme')
-          const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
+          const currentMode = body.getAttribute('data-theme-mode') || 'auto'
+          const idx = CYCLE.indexOf(currentMode)
+          const nextMode = CYCLE[(idx + 1) % CYCLE.length]
 
-          body.setAttribute('data-theme', newTheme)
-          themeBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙'
-          localStorage.setItem('theme', newTheme)
+          applyTheme(nextMode)
+          localStorage.setItem('theme-mode', nextMode)
 
           reRenderMermaid()
         })
