@@ -15,8 +15,8 @@
     "@fortawesome/fontawesome-free": "^7.2.0",
     "astro": "^6.1.2",
     "js-yaml": "^4.1.1",
-    "mermaid": "^11.13.0",
-    "preact": "^10.29.0"
+    "mermaid": "^11.14.0",
+    "preact": "^10.29.1"
   },
   "overrides": {
     "lodash-es": "^4.17.23"
