@@ -97,16 +97,6 @@ export interface CVOtherItem {
   reference: CVProjectReference | null
 }
 
-export interface CVAIAnalysisCategory {
-  title: string
-  items: string[]
-}
-
-export interface CVAIAnalysis {
-  description: string
-  categories: CVAIAnalysisCategory[]
-}
-
 export interface CVData {
   meta: CVMeta
   basicInfo: CVBasicInfo
@@ -114,7 +104,6 @@ export interface CVData {
   skills: CVSkillCategory[]
   aiTools: CVAITools
   strengths: string[]
-  aiAnalysis: CVAIAnalysis
   workExperience: CVWorkExperience[]
   ossContributions: CVOSSContribution[]
   personalProjects: CVPersonalProject[]
