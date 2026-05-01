@@ -1,7 +1,7 @@
 meta:
   title: 鶴田 洸 - 職務経歴書
   description: 鶴田洸の職務経歴書 - 機械学習エンジニア/バックエンドエンジニア
-  updateDate: 2026/02現在
+  updateDate: 2026/05現在
 basicInfo:
   name:
     ja: 鶴田 洸
@@ -32,7 +32,11 @@ basicInfo:
       url: https://connpass.com/user/kiakiraki/
       displayText: あきらき
 career:
-  - period: 2021/03〜
+  - period: 2026/05〜
+    company: SB Intuitions株式会社
+    details:
+      - プロダクト開発本部 AI Enabling部
+  - period: 2021/03〜2026/04
     company: 株式会社MIXI
     details:
       - みてね事業本部 機械学習エンジニア / バックエンドエンジニア
@@ -278,10 +282,10 @@ workExperience:
           - NVIDIA Docker
           - MLFlow
   - company: 株式会社MIXI
-    period: 2021/03～現在
+    period: 2021/03～2026/04
     projects:
       - title: 写真アルバムサービスにおける各種機械学習モデルの作成・運用
-        period: 2021/03～進行中
+        period: 2021/03～2026/04
         description: |
           家族向け写真アルバムサービス「みてね」で運用されている各種機械学習モデル(顔検出器など)の改善や開発プロセスの整備、数年前から運用されている機械学習システムの技術的負債解消作業など。
         highlights: []
@@ -291,7 +295,7 @@ workExperience:
           - TensorFlow
           - PyTorch
       - title: 写真アルバムサービスのバックエンド開発
-        period: 2022/10～進行中
+        period: 2022/10～2026/04
         description: |
           家族向け写真アルバムサービス「みてね」におけるバックエンド開発 (Ruby on Rails)。主に「1秒動画」機能や各種レコメンド機能など。
         highlights: []
