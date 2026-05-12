@@ -141,6 +141,16 @@ strengths:
   - エンジニアの文化づくり (社内LT会の立ち上げ、「分報(times)」文化の推進、社内ハッカソン運営)
   - 業務改善への提言、各種業務ツールの積極的な導入
 workExperience:
+  - company: SB Intuitions株式会社
+    period: 2026/05〜
+    projects:
+      - title: MLOps/LLMOps基盤の構築・運用、関連ツール開発
+        period: 2026/05〜
+        description: |
+          MLOps/LLMOps基盤の構築・運用、及びアノテーション等の関連ツール開発を担当予定。
+        highlights: []
+        references: []
+        tags: []
   - company: 富士通株式会社
     period: 2014/04～2018/08
     projects:
@@ -336,30 +346,6 @@ personalProjects:
       - Claude Skills
       - Grafana
       - SwitchBot API
-      - React
-  - title: セルフホスト画像検索システム (計画中)
-    status: 設計・プロトタイプ
-    description: |
-      個人で撮影した約10万枚の写真 (競馬・航空機・その他) に対して、Google Photos 風の自然言語検索を自前で実現するシステムの設計・プロトタイピング。
-
-      Vision-Language Model (Qwen3-VL-30B-A3B) によるキャプション生成・OCRと、SigLIP によるベクトル埋め込みを組み合わせ、SQLite FTS5 (trigram tokenizer) と sqlite-vec によるハイブリッド検索を実現する構成。RTX4090 上で VLM のバッチ推論を行い、ストレージサーバ上の SQLite で検索を提供する。
-
-      VLM の OCR 精度検証として、競馬写真のゼッケン文字読み取りテストを実施。部分的な誤認識に対しては trigram tokenizer によるファジーマッチで救済する設計とし、PaddleOCR 等の追加 OCR パイプラインを不要にした。
-    highlights:
-      - VLM (Qwen3-VL-30B-A3B) の量子化モデルによるキャプション + OCR の統合パイプライン設計
-      - SigLIP embedding + sqlite-vec によるセマンティック検索
-      - SQLite FTS5 trigram tokenizer による日本語ファジーテキスト検索
-      - 競馬写真でのOCR精度検証と、ドメイン固有名詞の辞書ファジーマッチ補正の設計
-    references: []
-    tags:
-      - Python
-      - Qwen3-VL
-      - SigLIP
-      - SQLite
-      - sqlite-vec
-      - FTS5
-      - Ollama
-      - FastAPI
       - React
 networkDiagram:
   mermaidCode: |
