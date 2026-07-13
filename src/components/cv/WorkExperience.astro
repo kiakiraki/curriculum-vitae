@@ -41,7 +41,7 @@ const { data } = Astro.props
             {project.references.length > 0 && (
               <Fragment>
                 <p>
-                  <strong>参考:</strong>
+                  <strong>参考:</strong>{' '}
                   {project.references.length === 1 && (
                     <a
                       href={project.references[0].url}
