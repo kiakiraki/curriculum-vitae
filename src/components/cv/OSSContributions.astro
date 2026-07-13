@@ -24,7 +24,7 @@ const { data } = Astro.props
         <ul>
           {contrib.pullRequests.map((pr) => (
             <li>
-              <strong>{pr.title}:</strong>
+              <strong>{pr.title}:</strong>{' '}
               <a href={pr.url} target="_blank" rel="noopener noreferrer">
                 PR #{pr.number}
               </a>
