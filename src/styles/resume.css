@@ -145,9 +145,14 @@ a:hover {
   backdrop-filter: blur(8px);
 }
 
-.toggle-btn:hover {
+.toggle-btn:hover:not(:disabled) {
   background: var(--hover-color);
   transform: scale(1.05);
+}
+
+.toggle-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 #theme-btn {
@@ -165,6 +170,25 @@ a:hover {
   background: var(--accent-color);
   border-color: var(--accent-color);
   color: #ffffff;
+}
+
+.pdf-indicator {
+  display: none;
+  position: fixed;
+  top: 76px;
+  right: 20px;
+  z-index: 1000;
+  background: #ffffff;
+  border: 1px solid #d0d0d0;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #1e40af;
+}
+
+body[data-layout='pdf'] .pdf-indicator {
+  display: block;
 }
 
 .container {
@@ -437,17 +461,21 @@ body[data-layout='pdf'] {
   --text-color: #111111;
   --secondary-text: #333333;
   --border-color: #d0d0d0;
-  --accent-color: #111111;
-  --link-color: #111111;
-  --link-hover-color: #111111;
+  --accent-color: #1e40af;
+  --link-color: #0e7490;
+  --link-hover-color: #0e7490;
   --hover-color: #ffffff;
   --section-bg: #ffffff;
   --tag-bg: #f2f2f2;
-  --tag-text: #111111;
+  --tag-text: #1e40af;
   --orb-opacity: 0;
   --dot-grid-opacity: 0;
   background: var(--bg-color);
   color: var(--text-color);
+}
+
+body[data-layout='pdf'] a {
+  text-decoration: underline;
 }
 
 body[data-layout='pdf'] .container {
@@ -541,6 +569,11 @@ body[data-layout='pdf'] .oss-contributions .contribution-block {
     width: 40px;
     font-size: 18px;
   }
+
+  .pdf-indicator {
+    top: 63px;
+    right: 15px;
+  }
 }
 
 .network-diagram {
@@ -610,24 +643,33 @@ body[data-layout='pdf'] .oss-contributions .contribution-block {
     display: none;
   }
 
+  .pdf-indicator,
+  body[data-layout='pdf'] .pdf-indicator {
+    display: none;
+  }
+
   body {
     --bg-color: #ffffff;
     --text-color: #111111;
     --secondary-text: #333333;
     --border-color: #d0d0d0;
-    --accent-color: #111111;
-    --link-color: #111111;
-    --link-hover-color: #111111;
+    --accent-color: #1e40af;
+    --link-color: #0e7490;
+    --link-hover-color: #0e7490;
     --hover-color: #ffffff;
     --section-bg: #ffffff;
     --tag-bg: #f2f2f2;
-    --tag-text: #111111;
+    --tag-text: #1e40af;
     --orb-opacity: 0;
     --dot-grid-opacity: 0;
     background: #ffffff;
     color: #111111;
     font-size: 11pt;
     line-height: 1.45;
+  }
+
+  a {
+    text-decoration: underline;
   }
 
   .orb-purple {
