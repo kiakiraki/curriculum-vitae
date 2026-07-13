@@ -76,6 +76,10 @@ const cvData = yaml.load(yamlContent) as CVData
       </button>
     </div>
 
+    <div id="pdf-indicator" class="pdf-indicator" role="status">
+      📄 PDFレイアウト表示中
+    </div>
+
     <main class="container">
       <header class="header">
         <h1>Curriculum-Vitae</h1>
@@ -226,6 +230,7 @@ const cvData = yaml.load(yamlContent) as CVData
             body.removeAttribute('data-layout')
           }
           setPdfButtonState(enabled)
+          themeBtn.disabled = enabled
         }
 
         // PDFレイアウトの復元
