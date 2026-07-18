@@ -303,6 +303,9 @@ ossContributions:
       - title: Add Bundler support and timeout configuration for Ruby projects
         url: https://github.com/oraios/serena/pull/419
         number: 419
+      - title: 'feat: Expand Ruby language server test coverage'
+        url: https://github.com/oraios/serena/pull/438
+        number: 438
       - title: 'Enhance Solargraph integration: Rails detection, exclude patterns, and error handling'
         url: https://github.com/oraios/serena/pull/439
         number: 439
@@ -312,6 +315,38 @@ ossContributions:
       - title: Enhanced Ruby LSP progress handler to properly capture completion signals
         url: https://github.com/oraios/serena/pull/569
         number: 569
+      - title: 'feat: add rbenv integration for Ruby LSP server'
+        url: https://github.com/oraios/serena/pull/628
+        number: 628
+  - project: ax (yusukebe/ax)
+    description: |
+      「The AI-era curl」を謳うCLIツール ax に対し、curl互換性の向上や堅牢性の改善を中心にコントリビュート。curl流の `-d @file` 対応、`-f` オプションのexit code 22対応、Content-Typeで宣言された文字コードによるデコード、エラーハンドリングの改善などを実施。
+    pullRequests:
+      - title: 'fix(md): <a> href stripped — links rendered as plain text instead of [text](url)'
+        url: https://github.com/yusukebe/ax/pull/3
+        number: 3
+      - title: 'parse: bad selector — one-line error instead of a stack trace'
+        url: https://github.com/yusukebe/ax/pull/19
+        number: 19
+      - title: 'io: decode responses by their declared charset instead of always UTF-8'
+        url: https://github.com/yusukebe/ax/pull/20
+        number: 20
+      - title: 'fetch: -d @file reads the file, curl-style, instead of sending the literal string'
+        url: https://github.com/yusukebe/ax/pull/21
+        number: 21
+      - title: 'fetch: -f with -o exits 22 and never saves the error document'
+        url: https://github.com/yusukebe/ax/pull/22
+        number: 22
+      - title: 'fetch: -o enforces --max-bytes and fails cleanly when the output path is unwritable'
+        url: https://github.com/yusukebe/ax/pull/28
+        number: 28
+  - project: mo (k1LoW/mo)
+    description: |
+      Markdownファイルをブラウザで開くビューア mo に対し、State.Groups() のデータ競合を FileEntry のディープコピーで解消する修正をコントリビュート。
+    pullRequests:
+      - title: Fix data race in State.Groups() by deep-copying FileEntry values
+        url: https://github.com/k1LoW/mo/pull/251
+        number: 251
 personalProjects:
   - title: 個人ヘルスケアデータ基盤
     status: 運用中
