@@ -340,13 +340,49 @@ ossContributions:
       - title: 'fetch: -o enforces --max-bytes and fails cleanly when the output path is unwritable'
         url: https://github.com/yusukebe/ax/pull/28
         number: 28
+      - title: 'feat: support -X, -d and -k in parse mode'
+        url: https://github.com/yusukebe/ax/pull/38
+        number: 38
+      - title: 'fix: --md silently drops <div> content and bare text nodes'
+        url: https://github.com/yusukebe/ax/pull/42
+        number: 42
+      - title: 'fix(md): --all should emit the whole page instead of stopping at the default budget'
+        url: https://github.com/yusukebe/ax/pull/54
+        number: 54
+      - title: 'fix: --attr and --html can emit a different number of lines than matched elements'
+        url: https://github.com/yusukebe/ax/pull/57
+        number: 57
+  - project: flexeval (sbintuitions/flexeval)
+    description: |
+      LLM評価フレームワーク flexeval に対し、pad_tokenを持たないモデルでfinish_reasonが常にlengthになってしまう問題の修正をコントリビュート。
+    pullRequests:
+      - title: pad_token無しモデルでfinish_reasonが常にlengthになる問題を修正
+        url: https://github.com/sbintuitions/flexeval/pull/296
+        number: 296
   - project: mo (k1LoW/mo)
     description: |
-      Markdownファイルをブラウザで開くビューア mo に対し、State.Groups() のデータ競合を FileEntry のディープコピーで解消する修正をコントリビュート。
+      Markdownファイルをブラウザで開くビューア mo に対し、State.Groups() のデータ競合を FileEntry のディープコピーで解消する修正と、バックグラウンド起動時にサーバ起動失敗を誤って成功と報告してしまう問題の修正をコントリビュート。
     pullRequests:
       - title: Fix data race in State.Groups() by deep-copying FileEntry values
         url: https://github.com/k1LoW/mo/pull/251
         number: 251
+      - title: Fix background start falsely reporting success when the server fails to start
+        url: https://github.com/k1LoW/mo/pull/255
+        number: 255
+  - project: herdr (herdrdev/herdr)
+    description: |
+      ターミナルエミュレータ herdr に対し、copy-mode で行末の全角グリフを跨ぐ単語境界選択が壊れる問題の修正をコントリビュート。
+    pullRequests:
+      - title: 'fix: expand copy-mode word-end window past a final wide glyph'
+        url: https://github.com/herdrdev/herdr/pull/2145
+        number: 2145
+  - project: difit (yoshiko-pg/difit)
+    description: |
+      GitHub Diff ビューア difit に対し、diffパース失敗時に /api/diff の選択状態が壊れる問題の修正をコントリビュート。
+    pullRequests:
+      - title: 'fix(server): keep /api/diff selection state intact when diff parsing fails'
+        url: https://github.com/yoshiko-pg/difit/pull/440
+        number: 440
 personalProjects:
   - title: 個人ヘルスケアデータ基盤
     status: 運用中
