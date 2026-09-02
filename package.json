@@ -11,9 +11,9 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@astrojs/preact": "^6.0.2",
+    "@astrojs/preact": "^6.0.4",
     "@fortawesome/fontawesome-free": "^7.3.1",
-    "astro": "^7.2.2",
+    "astro": "^7.2.9",
     "js-yaml": "^4.3.1",
     "mermaid": "^11.17.1",
     "preact": "^10.29.8"
