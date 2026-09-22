@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "check": "astro check"
   },
   "dependencies": {
     "@astrojs/preact": "^6.0.2",
@@ -22,12 +23,15 @@
     "lodash-es": "^4.18.1"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
     "@types/js-yaml": "^4.0.9",
+    "@types/node": "^24.13.6",
     "@typescript-eslint/parser": "^8.67.0",
     "eslint": "^10.9.0",
     "eslint-plugin-astro": "^1.7.0",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.9.3",
     "typescript-eslint": "^8.67.0"
   }
 }

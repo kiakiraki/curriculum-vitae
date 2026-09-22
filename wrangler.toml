@@ -2,9 +2,9 @@ name = "curriculum-vitae"
 compatibility_date = "2026-02-23"
 workers_dev = true
 
-# ビルド設定 (Cloudflare Builds)
+# wrangler dev / deploy 時のみ実行される。Workers Builds はダッシュボードの Build command を使う。
 [build]
-command = "npm install && npm run build"
+command = "npm ci && npm run build"
 
 # カスタムドメイン設定
 [[routes]]

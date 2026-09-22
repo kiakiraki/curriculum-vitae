@@ -16,7 +16,8 @@ https://curriculum-vitae.kiakiraki.dev/
 - **フォント**: Google Fonts (Noto Sans JP), [Font Awesome](https://fontawesome.com/)
 - **図表**: [Mermaid.js](https://mermaid.js.org/) - ネットワーク図やダイアグラムの作成
 - **ホスティング**: Cloudflare Workers (Static Assets)
-- **CI/CD**: GitHub Actions
+- **CI**: GitHub Actions
+- **CD**: Cloudflare Workers Builds
 
 ## 📦 インストール
 
@@ -37,19 +38,22 @@ npm install
 | `npm run preview` | ビルド結果をローカルでプレビュー      |
 | `npm run lint`    | ESLintでコードの静的解析を実行        |
 | `npm run format`  | Prettierでコードをフォーマット        |
+| `npm run check`   | Astroで型チェックを実行               |
 
 ## 🏗️ ビルドとデプロイ
 
-`main`ブランチにpushすると、GitHub ActionsによってビルドされCloudflare Workersにデプロイされます。
+`main`ブランチにpushすると、Cloudflare Workers Buildsがビルドしてデプロイします。GitHub ActionsはPRと`main`へのpushで、ビルド・型チェック・lint・formatを実行します。
+
+Workers Buildsのbuild commandはダッシュボード側の設定で、`wrangler.toml`の`[build]`は使いません。lockfileどおりに入れるなら、ダッシュボード側も`npm ci && npm run build`にしてください。
 
 ## 📁 プロジェクト構成
 
 ```
 cv-website/
 ├── .github/
+│   ├── dependabot.yml          # Dependabot設定
 │   └── workflows/
-│       ├── ci.yml              # CI設定 (ビルド・テスト)
-│       └── deploy.yml          # Cloudflare Workersへのデプロイ設定
+│       └── ci.yml              # CI設定 (ビルド・型チェック・lint)
 ├── public/
 │   ├── favicon.svg             # ファビコン
 │   ├── css/
