@@ -102,10 +102,12 @@ const cvData = yaml.load(yamlContent) as CVData
       // --- Mermaid: 遅延読み込み + テーマ連動 ---
       const mermaidFlowchart = {
         htmlLabels: true,
-        curve: 'cardinal',
+        curve: 'cardinal' as const,
       }
 
-      const getMermaidTheme = () => {
+      type MermaidTheme = 'default' | 'dark'
+
+      const getMermaidTheme = (): MermaidTheme => {
         if (document.body.getAttribute('data-layout') === 'pdf') {
           return 'default'
         }
@@ -114,8 +116,8 @@ const cvData = yaml.load(yamlContent) as CVData
           : 'default'
       }
 
-      let mermaidModule = null
-      let currentMermaidTheme = null
+      let mermaidModule: typeof import('mermaid').default | null = null
+      let currentMermaidTheme: MermaidTheme | null = null
 
       // 描画前にオリジナル定義を保存
       const mermaidElements = document.querySelectorAll('.mermaid')
@@ -129,12 +131,14 @@ const cvData = yaml.load(yamlContent) as CVData
           const m = await import('mermaid')
           mermaidModule = m.default
         }
+        const mermaid = mermaidModule
+        if (!mermaid) return
 
         const theme = getMermaidTheme()
         // テーマが変わったときだけ initialize を呼ぶ
         if (theme !== currentMermaidTheme) {
           currentMermaidTheme = theme
-          mermaidModule.initialize({
+          mermaid.initialize({
             startOnLoad: false,
             theme,
             flowchart: mermaidFlowchart,
@@ -150,7 +154,7 @@ const cvData = yaml.load(yamlContent) as CVData
           }
         })
 
-        await mermaidModule.run()
+        await mermaid.run()
       }
 
       // IntersectionObserver でビューポート付近に来たら読み込み
@@ -178,8 +182,8 @@ const cvData = yaml.load(yamlContent) as CVData
 
       // --- テーマ・PDFレイアウト制御 ---
       ;(function () {
-        const themeBtn = document.getElementById('theme-btn')
-        const pdfBtn = document.getElementById('pdf-btn')
+        const themeBtn = document.querySelector<HTMLButtonElement>('#theme-btn')
+        const pdfBtn = document.querySelector<HTMLButtonElement>('#pdf-btn')
         const body = document.body
         let printLayoutForced = false
 
@@ -188,7 +192,11 @@ const cvData = yaml.load(yamlContent) as CVData
           return
         }
 
-        const ICONS = { auto: '🖥️', light: '☀️', dark: '🌙' }
+        const ICONS: Record<string, string> = {
+          auto: '🖥️',
+          light: '☀️',
+          dark: '🌙',
+        }
         const CYCLE = ['auto', 'light', 'dark']
 
         const getSystemTheme = () =>
@@ -196,7 +204,7 @@ const cvData = yaml.load(yamlContent) as CVData
             ? 'dark'
             : 'light'
 
-        const applyTheme = (mode) => {
+        const applyTheme = (mode: string) => {
           const theme = mode === 'auto' ? getSystemTheme() : mode
           body.setAttribute('data-theme', theme)
           body.setAttribute('data-theme-mode', mode)
@@ -218,12 +226,12 @@ const cvData = yaml.load(yamlContent) as CVData
             }
           })
 
-        const setPdfButtonState = (enabled) => {
+        const setPdfButtonState = (enabled: boolean) => {
           if (!pdfBtn) return
           pdfBtn.setAttribute('aria-pressed', enabled ? 'true' : 'false')
         }
 
-        const applyPdfLayout = (enabled) => {
+        const applyPdfLayout = (enabled: boolean) => {
           if (enabled) {
             body.setAttribute('data-layout', 'pdf')
           } else {
