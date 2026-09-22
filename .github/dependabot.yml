@@ -6,6 +6,7 @@ updates:
       interval: 'weekly'
     groups:
       astro-ecosystem:
+        applies-to: version-updates
         patterns:
           - 'astro'
           - '@astrojs/*'
@@ -13,6 +14,7 @@ updates:
           - 'minor'
           - 'patch'
       lint-and-format:
+        applies-to: version-updates
         patterns:
           - 'eslint*'
           - '@typescript-eslint/*'
@@ -22,6 +24,9 @@ updates:
           - 'minor'
           - 'patch'
       minor-and-patch:
+        applies-to: version-updates
+        patterns:
+          - '*'
         update-types:
           - 'minor'
           - 'patch'
@@ -32,6 +37,24 @@ updates:
           - '@typescript-eslint/*'
           - 'typescript-eslint'
           - 'prettier*'
+      astro-security:
+        applies-to: security-updates
+        patterns:
+          - 'astro'
+          - '@astrojs/*'
+        update-types:
+          - 'minor'
+          - 'patch'
+      security-minor-and-patch:
+        applies-to: security-updates
+        patterns:
+          - '*'
+        update-types:
+          - 'minor'
+          - 'patch'
+        exclude-patterns:
+          - 'astro'
+          - '@astrojs/*'
     labels:
       - 'dependencies'
 
