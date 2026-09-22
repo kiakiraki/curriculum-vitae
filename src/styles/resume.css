@@ -12,6 +12,7 @@
   --tag-text: #0891b2;
   --orb-opacity: 0;
   --dot-grid-opacity: 0;
+  --diagram-line: #94a3b8;
 }
 
 [data-theme='dark'] {
@@ -28,6 +29,7 @@
   --tag-text: #22d3ee;
   --orb-opacity: 1;
   --dot-grid-opacity: 1;
+  --diagram-line: #64748b;
 }
 
 @keyframes fadeSlideIn {
@@ -470,6 +472,7 @@ body[data-layout='pdf'] {
   --tag-text: #1e40af;
   --orb-opacity: 0;
   --dot-grid-opacity: 0;
+  --diagram-line: #666666;
   background: var(--bg-color);
   color: var(--text-color);
 }
@@ -580,16 +583,63 @@ body[data-layout='pdf'] .oss-contributions .contribution-block {
   margin-bottom: 2rem;
 }
 
-.network-diagram .mermaid {
-  background-color: var(--bg-color);
-  padding: 1rem;
-  border-radius: 8px;
+.network-diagram .net {
   margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-color);
 }
 
-.network-diagram .fa,
-.network-diagram .fas {
-  margin-right: 5px;
+.net-tree,
+.net-tree ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.net-tree ul {
+  margin-left: 0.55rem;
+  padding-left: 1rem;
+}
+
+.net-tree li {
+  position: relative;
+  padding: 0.35rem 0;
+}
+
+.net-tree ul li::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: 0;
+  bottom: 0;
+  border-left: 2px solid var(--diagram-line);
+}
+
+.net-tree ul li:last-child::before {
+  bottom: auto;
+  height: 0.95rem;
+}
+
+.net-tree ul li::after {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: 0.95rem;
+  width: 0.75rem;
+  border-top: 2px solid var(--diagram-line);
+}
+
+.net-node strong {
+  font-weight: 600;
+}
+
+.net-node span {
+  display: block;
+  color: var(--secondary-text);
+  font-size: 0.85rem;
+  line-height: 1.4;
 }
 
 .oss-contributions .contribution-block {
@@ -662,6 +712,7 @@ body[data-layout='pdf'] .oss-contributions .contribution-block {
     --tag-text: #1e40af;
     --orb-opacity: 0;
     --dot-grid-opacity: 0;
+    --diagram-line: #666666;
     background: #ffffff;
     color: #111111;
     font-size: 11pt;
@@ -796,7 +847,12 @@ body[data-layout='pdf'] .oss-contributions .contribution-block {
     color: #444444;
   }
 
-  .network-diagram .mermaid {
-    padding: 8px;
+  .network-diagram .net {
+    padding: 8px 10px;
+  }
+
+  .network-diagram {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 }

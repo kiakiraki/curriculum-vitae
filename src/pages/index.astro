@@ -1,9 +1,6 @@
 ---
-import yaml from 'js-yaml'
-import fs from 'node:fs'
-import path from 'node:path'
 import '../styles/resume.css'
-import type { CVData } from '../types/cv-data'
+import { loadCvData } from '../lib/load-cv'
 import BasicInfo from '../components/cv/BasicInfo.astro'
 import Career from '../components/cv/Career.astro'
 import Skills from '../components/cv/Skills.astro'
@@ -15,10 +12,7 @@ import PersonalProjects from '../components/cv/PersonalProjects.astro'
 import NetworkDiagram from '../components/cv/NetworkDiagram.astro'
 import Others from '../components/cv/Others.astro'
 
-// Load CV data from YAML
-const yamlPath = path.join(process.cwd(), 'src/data/cv-data.yaml')
-const yamlContent = fs.readFileSync(yamlPath, 'utf-8')
-const cvData = yaml.load(yamlContent) as CVData
+const cvData = loadCvData()
 ---
 
 <html lang="ja">
@@ -26,34 +20,17 @@ const cvData = yaml.load(yamlContent) as CVData
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
     <title>{cvData.meta.title}</title>
     <meta name="description" content={cvData.meta.description} />
+    <script is:inline src="/theme-init.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/all.min.css" />
   </head>
   <body>
-    <script is:inline>
-      ;(function () {
-        const mode = localStorage.getItem('theme-mode') || 'auto'
-        let theme
-        if (mode === 'auto') {
-          theme = window.matchMedia('(prefers-color-scheme: dark)').matches
-            ? 'dark'
-            : 'light'
-        } else {
-          theme = mode
-        }
-        document.body.setAttribute('data-theme', theme)
-        document.body.setAttribute('data-theme-mode', mode)
-      })()
-    </script>
-
     <div class="orb-purple"></div>
 
     <div class="theme-toggle">
@@ -94,205 +71,10 @@ const cvData = yaml.load(yamlContent) as CVData
       <WorkExperience data={cvData.workExperience} />
       <OSSContributions data={cvData.ossContributions} />
       <PersonalProjects data={cvData.personalProjects} />
-      <NetworkDiagram data={cvData.networkDiagram} />
+      <NetworkDiagram />
       <Others data={cvData.others} />
     </main>
 
-    <script>
-      // --- Mermaid: 遅延読み込み + テーマ連動 ---
-      const mermaidFlowchart = {
-        htmlLabels: true,
-        curve: 'cardinal' as const,
-      }
-
-      type MermaidTheme = 'default' | 'dark'
-
-      const getMermaidTheme = (): MermaidTheme => {
-        if (document.body.getAttribute('data-layout') === 'pdf') {
-          return 'default'
-        }
-        return document.body.getAttribute('data-theme') === 'dark'
-          ? 'dark'
-          : 'default'
-      }
-
-      let mermaidModule: typeof import('mermaid').default | null = null
-      let currentMermaidTheme: MermaidTheme | null = null
-
-      // 描画前にオリジナル定義を保存
-      const mermaidElements = document.querySelectorAll('.mermaid')
-      const originalDefinitions = new Map()
-      mermaidElements.forEach((el) => {
-        originalDefinitions.set(el, el.textContent?.trim() || '')
-      })
-
-      const renderMermaid = async () => {
-        if (!mermaidModule) {
-          const m = await import('mermaid')
-          mermaidModule = m.default
-        }
-        const mermaid = mermaidModule
-        if (!mermaid) return
-
-        const theme = getMermaidTheme()
-        // テーマが変わったときだけ initialize を呼ぶ
-        if (theme !== currentMermaidTheme) {
-          currentMermaidTheme = theme
-          mermaid.initialize({
-            startOnLoad: false,
-            theme,
-            flowchart: mermaidFlowchart,
-          })
-        }
-
-        // 描画済みの場合のみ SVG をクリアして再描画
-        mermaidElements.forEach((el) => {
-          const original = originalDefinitions.get(el)
-          if (original && el.querySelector('svg')) {
-            el.removeAttribute('data-processed')
-            el.innerHTML = original
-          }
-        })
-
-        await mermaid.run()
-      }
-
-      // IntersectionObserver でビューポート付近に来たら読み込み
-      let mermaidInitiated = false
-      if (mermaidElements.length > 0) {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            for (const entry of entries) {
-              if (entry.isIntersecting && !mermaidInitiated) {
-                mermaidInitiated = true
-                observer.disconnect()
-                renderMermaid()
-              }
-            }
-          },
-          { rootMargin: '200px' },
-        )
-        mermaidElements.forEach((el) => observer.observe(el))
-      }
-
-      const reRenderMermaid = async () => {
-        if (!mermaidModule) return
-        await renderMermaid()
-      }
-
-      // --- テーマ・PDFレイアウト制御 ---
-      ;(function () {
-        const themeBtn = document.querySelector<HTMLButtonElement>('#theme-btn')
-        const pdfBtn = document.querySelector<HTMLButtonElement>('#pdf-btn')
-        const body = document.body
-        let printLayoutForced = false
-
-        if (!themeBtn) {
-          console.error('Theme button not found')
-          return
-        }
-
-        const ICONS: Record<string, string> = {
-          auto: '🖥️',
-          light: '☀️',
-          dark: '🌙',
-        }
-        const CYCLE = ['auto', 'light', 'dark']
-
-        const getSystemTheme = () =>
-          window.matchMedia('(prefers-color-scheme: dark)').matches
-            ? 'dark'
-            : 'light'
-
-        const applyTheme = (mode: string) => {
-          const theme = mode === 'auto' ? getSystemTheme() : mode
-          body.setAttribute('data-theme', theme)
-          body.setAttribute('data-theme-mode', mode)
-          themeBtn.textContent = ICONS[mode]
-        }
-
-        // 初期表示（インラインスクリプトで data-theme は設定済み）
-        const currentMode = body.getAttribute('data-theme-mode') || 'auto'
-        themeBtn.textContent = ICONS[currentMode]
-
-        // システム設定変更の監視（auto モード時に追従）
-        window
-          .matchMedia('(prefers-color-scheme: dark)')
-          .addEventListener('change', () => {
-            const mode = body.getAttribute('data-theme-mode')
-            if (mode === 'auto') {
-              applyTheme('auto')
-              reRenderMermaid()
-            }
-          })
-
-        const setPdfButtonState = (enabled: boolean) => {
-          if (!pdfBtn) return
-          pdfBtn.setAttribute('aria-pressed', enabled ? 'true' : 'false')
-        }
-
-        const applyPdfLayout = (enabled: boolean) => {
-          if (enabled) {
-            body.setAttribute('data-layout', 'pdf')
-          } else {
-            body.removeAttribute('data-layout')
-          }
-          setPdfButtonState(enabled)
-          themeBtn.disabled = enabled
-        }
-
-        // PDFレイアウトの復元
-        const savedLayout = localStorage.getItem('pdf-layout')
-        if (savedLayout === 'enabled') {
-          applyPdfLayout(true)
-        } else {
-          setPdfButtonState(false)
-        }
-
-        themeBtn.addEventListener('click', () => {
-          const currentMode = body.getAttribute('data-theme-mode') || 'auto'
-          const idx = CYCLE.indexOf(currentMode)
-          const nextMode = CYCLE[(idx + 1) % CYCLE.length]
-
-          applyTheme(nextMode)
-          localStorage.setItem('theme-mode', nextMode)
-
-          reRenderMermaid()
-        })
-
-        if (pdfBtn) {
-          pdfBtn.addEventListener('click', () => {
-            const isPdfLayout = body.getAttribute('data-layout') === 'pdf'
-            const nextState = !isPdfLayout
-
-            applyPdfLayout(nextState)
-            localStorage.setItem(
-              'pdf-layout',
-              nextState ? 'enabled' : 'disabled',
-            )
-            reRenderMermaid()
-          })
-        } else {
-          console.error('PDF button not found')
-        }
-
-        window.addEventListener('beforeprint', () => {
-          if (body.getAttribute('data-layout') !== 'pdf') {
-            applyPdfLayout(true)
-            printLayoutForced = true
-          }
-          // best-effort: 印刷ダイアログが非同期完了を待たない場合がある
-          reRenderMermaid()
-        })
-
-        window.addEventListener('afterprint', () => {
-          if (printLayoutForced) {
-            applyPdfLayout(false)
-            printLayoutForced = false
-          }
-          reRenderMermaid()
-        })
-      })()
-    </script>
+    <script is:inline src="/theme-controls.js"></script>
   </body>
 </html>

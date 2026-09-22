@@ -1,16 +1,65 @@
----
-import type { CVNetworkDiagram } from '../../types/cv-data'
-
-interface Props {
-  data: CVNetworkDiagram
-}
-
-const { data } = Astro.props
----
-
-<section class="network-diagram">
-  <h2>ホームネットワーク構成</h2>
-  <div class="mermaid">
-    {data.mermaidCode}
+<section class="network-diagram" aria-labelledby="network-diagram-heading">
+  <h2 id="network-diagram-heading">ホームネットワーク構成</h2>
+  <div class="net">
+    <ul class="net-tree">
+      <li>
+        <div class="net-node">
+          <strong>NEC Aterm 19000T12BE</strong>
+          <span>ルータ</span>
+        </div>
+        <ul>
+          <li>
+            <div class="net-node">
+              <strong>NETGEAR XS505M</strong>
+              <span>スイッチ</span>
+            </div>
+            <ul>
+              <li>
+                <div class="net-node">
+                  <strong>メインPC</strong>
+                  <span>Ryzen 9 5950X / 64GB RAM / RTX4090</span>
+                </div>
+              </li>
+              <li>
+                <div class="net-node">
+                  <strong>ストレージサーバ</strong>
+                  <span>8TB HDD x6 / Windows Storage Spaces</span>
+                  <span>VPN on Tailscale</span>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <div class="net-node">
+              <strong>SwitchBot Hub mini</strong>
+            </div>
+            <ul>
+              <li>
+                <div class="net-node">
+                  <strong>SwitchBot CO2センサー</strong>
+                </div>
+              </li>
+              <li>
+                <div class="net-node">
+                  <strong>SwitchBot スマートプラグ</strong>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <div class="net-node">
+              <strong>Nature Remo E</strong>
+            </div>
+            <ul>
+              <li>
+                <div class="net-node">
+                  <strong>スマートメーター</strong>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </section>

@@ -88,10 +88,6 @@ export interface CVPersonalProject {
   tags: string[]
 }
 
-export interface CVNetworkDiagram {
-  mermaidCode: string
-}
-
 export interface CVOtherItem {
   content: string
   reference: CVProjectReference | null
@@ -107,6 +103,5 @@ export interface CVData {
   workExperience: CVWorkExperience[]
   ossContributions: CVOSSContribution[]
   personalProjects: CVPersonalProject[]
-  networkDiagram: CVNetworkDiagram
   others: CVOtherItem[]
 }
