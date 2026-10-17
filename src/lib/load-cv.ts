@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import yaml from 'js-yaml'
+import { JSON_SCHEMA, load as loadYaml } from 'js-yaml'
 import type { CVData } from '../types/cv-data'
 
 function assertHttpUrl(url: string, label: string): void {
@@ -75,7 +75,7 @@ function collectUrls(data: CVData): Array<[string, string]> {
 export function loadCvData(): CVData {
   const yamlPath = path.join(process.cwd(), 'src/data/cv-data.yaml')
   const yamlContent = fs.readFileSync(yamlPath, 'utf-8')
-  const data = yaml.load(yamlContent, { schema: yaml.JSON_SCHEMA })
+  const data = loadYaml(yamlContent, { schema: JSON_SCHEMA })
 
   if (!data || typeof data !== 'object') {
     throw new Error('cv-data.yaml did not parse to an object')
